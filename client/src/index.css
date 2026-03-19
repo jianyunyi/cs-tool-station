@@ -43,74 +43,58 @@
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
-}
-
-.dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  /* 极简科技风色彩系统 */
+  --primary: #00d9ff;
+  --primary-foreground: #0f1419;
+  --sidebar-primary: #00d9ff;
+  --sidebar-primary-foreground: #0f1419;
+  --chart-1: #00d9ff;
+  --chart-2: #00a8cc;
+  --chart-3: #0078a8;
+  --chart-4: #004e7a;
+  --chart-5: #002a47;
+  --radius: 0.5rem;
+  
+  /* 深灰蓝色主背景 */
+  --background: #0f1419;
+  --foreground: #e8eaed;
+  
+  /* 卡片背景 */
+  --card: #1a1f2e;
+  --card-foreground: #e8eaed;
+  
+  /* 弹出菜单 */
+  --popover: #1a1f2e;
+  --popover-foreground: #e8eaed;
+  
+  /* 次要色 */
+  --secondary: #2a3142;
+  --secondary-foreground: #b8bcc4;
+  
+  /* 静音色 */
+  --muted: #3a4152;
+  --muted-foreground: #9ca3af;
+  
+  /* 强调色 */
+  --accent: #00d9ff;
+  --accent-foreground: #0f1419;
+  
+  /* 破坏性操作 */
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  
+  /* 边框和输入 */
+  --border: #2a3142;
+  --input: #1a1f2e;
+  --ring: #00d9ff;
+  
+  /* 侧栏 */
+  --sidebar: #0f1419;
+  --sidebar-foreground: #e8eaed;
+  --sidebar-accent: #00d9ff;
+  --sidebar-accent-foreground: #0f1419;
+  --sidebar-border: #2a3142;
+  --sidebar-ring: #00d9ff;
 }
 
 @layer base {
@@ -119,6 +103,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -131,27 +116,46 @@
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
   }
+
+  /* 排版系统 */
+  h1 {
+    @apply text-4xl font-bold tracking-tight;
+    font-family: 'Geist Mono', monospace;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold tracking-tight;
+    font-family: 'Geist Mono', monospace;
+  }
+
+  h3 {
+    @apply text-lg font-semibold;
+  }
+
+  p {
+    @apply text-sm leading-relaxed;
+  }
 }
 
 @layer components {
   /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
+   * 自定义容器工具，居中内容并添加响应式填充。
+   * 
+   * 这覆盖了 Tailwind 的默认容器行为以：
+   * - 自动居中内容 (mx-auto)
+   * - 添加响应式水平填充
+   * - 为大屏幕设置最大宽度
+   * 
+   * 用法: <div className="container">...</div>
+   * 
+   * 对于自定义宽度，直接使用 max-w-* 工具：
    * <div className="max-w-6xl mx-auto px-4">...</div>
    */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem; /* 16px - 移动端填充 */
     padding-right: 1rem;
   }
 
@@ -162,16 +166,68 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem; /* 24px - 平板填充 */
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem; /* 32px - 桌面填充 */
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px; /* 标准内容宽度 */
     }
   }
+
+  /* 极简科技风卡片样式 */
+  .tool-card {
+    @apply relative overflow-hidden rounded-lg border border-border bg-card p-4 transition-all duration-200 hover:border-primary hover:shadow-lg hover:shadow-primary/20;
+  }
+
+  .tool-card:hover {
+    @apply translate-y-[-2px];
+  }
+
+  /* 强调色文本 */
+  .text-accent-glow {
+    @apply text-accent;
+    text-shadow: 0 0 8px rgba(0, 217, 255, 0.3);
+  }
+
+  /* 玻璃态效果 */
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/5 border border-white/10;
+  }
+
+  /* 代码块样式 */
+  code {
+    @apply rounded bg-muted px-2 py-1 font-mono text-xs text-muted-foreground;
+  }
+
+  pre {
+    @apply overflow-x-auto rounded-lg border border-border bg-muted p-4;
+  }
+
+  pre code {
+    @apply bg-transparent p-0;
+  }
+}
+
+/* 自定义滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a4152;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00d9ff;
 }
