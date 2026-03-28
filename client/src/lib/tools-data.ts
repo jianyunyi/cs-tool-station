@@ -1,3 +1,11 @@
+export interface ToolVersion {
+  version: string;
+  releaseDate?: string;
+  downloadUrl: string;
+  platform?: string[];
+  description?: string;
+}
+
 export interface Tool {
   id: string;
   title: string;
@@ -7,6 +15,7 @@ export interface Tool {
   url: string;
   icon?: string;
   color?: string;
+  versions?: ToolVersion[];
 }
 
 export const toolsData: Tool[] = [
@@ -19,6 +28,22 @@ export const toolsData: Tool[] = [
     tags: ["编辑器", "IDE", "开源"],
     url: "https://code.visualstudio.com",
     color: "#007ACC",
+    versions: [
+      {
+        version: "1.85.1",
+        releaseDate: "2023-12-13",
+        downloadUrl: "https://code.visualstudio.com/updates/v1_85",
+        platform: ["Windows", "macOS", "Linux"],
+        description: "稳定版更新，修复了多个关键漏洞和性能问题。"
+      },
+      {
+        version: "1.84.2",
+        releaseDate: "2023-11-09",
+        downloadUrl: "https://code.visualstudio.com/updates/v1_84",
+        platform: ["Windows", "macOS", "Linux"],
+        description: "引入了改进的侧边栏交互和新的终端功能。"
+      }
+    ]
   },
   {
     id: "jetbrains",
@@ -28,6 +53,15 @@ export const toolsData: Tool[] = [
     tags: ["IDE", "专业", "Java", "Python", "Web"],
     url: "https://www.jetbrains.com",
     color: "#000000",
+    versions: [
+      {
+        version: "2023.3",
+        releaseDate: "2023-12-06",
+        downloadUrl: "https://www.jetbrains.com/idea/download/",
+        platform: ["Windows", "macOS", "Linux"],
+        description: "全面支持 Java 21 和最新的 AI 辅助开发功能。"
+      }
+    ]
   },
   {
     id: "sublime",
@@ -37,6 +71,14 @@ export const toolsData: Tool[] = [
     tags: ["编辑器", "轻量级"],
     url: "https://www.sublimetext.com",
     color: "#FF9800",
+    versions: [
+      {
+        version: "Build 4169",
+        releaseDate: "2023-11-20",
+        downloadUrl: "https://www.sublimetext.com/download",
+        platform: ["Windows", "macOS", "Linux"]
+      }
+    ]
   },
   {
     id: "neovim",
@@ -46,6 +88,14 @@ export const toolsData: Tool[] = [
     tags: ["编辑器", "终端", "开源"],
     url: "https://neovim.io",
     color: "#57A143",
+    versions: [
+      {
+        version: "0.9.4",
+        releaseDate: "2023-10-10",
+        downloadUrl: "https://github.com/neovim/neovim/releases/tag/v0.9.4",
+        platform: ["Source", "Linux", "macOS", "Windows"]
+      }
+    ]
   },
 
   // 版本控制
@@ -57,6 +107,14 @@ export const toolsData: Tool[] = [
     tags: ["版本控制", "开源", "必备"],
     url: "https://git-scm.com",
     color: "#F1502F",
+    versions: [
+      {
+        version: "2.43.0",
+        releaseDate: "2023-11-20",
+        downloadUrl: "https://git-scm.com/download",
+        platform: ["Windows", "macOS", "Linux"]
+      }
+    ]
   },
   {
     id: "github",
@@ -86,6 +144,14 @@ export const toolsData: Tool[] = [
     tags: ["JavaScript", "UI库", "组件化"],
     url: "https://react.dev",
     color: "#61DAFB",
+    versions: [
+      {
+        version: "18.2.0",
+        releaseDate: "2022-06-14",
+        downloadUrl: "https://github.com/facebook/react/releases/tag/v18.2.0",
+        description: "当前稳定版本，包含并发渲染等核心特性。"
+      }
+    ]
   },
   {
     id: "vue",
@@ -95,6 +161,14 @@ export const toolsData: Tool[] = [
     tags: ["JavaScript", "框架", "渐进式"],
     url: "https://vuejs.org",
     color: "#4FC08D",
+    versions: [
+      {
+        version: "3.3.10",
+        releaseDate: "2023-12-07",
+        downloadUrl: "https://github.com/vuejs/core/releases",
+        description: "性能优化和更好的 TypeScript 支持。"
+      }
+    ]
   },
   {
     id: "angular",
@@ -104,6 +178,14 @@ export const toolsData: Tool[] = [
     tags: ["JavaScript", "框架", "企业级"],
     url: "https://angular.io",
     color: "#DD0031",
+    versions: [
+      {
+        version: "17.0.5",
+        releaseDate: "2023-12-06",
+        downloadUrl: "https://github.com/angular/angular/releases",
+        description: "引入了全新的控制流语法和延迟加载特性。"
+      }
+    ]
   },
   {
     id: "svelte",
@@ -124,6 +206,20 @@ export const toolsData: Tool[] = [
     tags: ["JavaScript", "运行时", "服务器"],
     url: "https://nodejs.org",
     color: "#339933",
+    versions: [
+      {
+        version: "20.10.0 (LTS)",
+        releaseDate: "2023-11-24",
+        downloadUrl: "https://nodejs.org/en/download/",
+        platform: ["Windows", "macOS", "Linux"]
+      },
+      {
+        version: "21.4.0 (Current)",
+        releaseDate: "2023-12-06",
+        downloadUrl: "https://nodejs.org/en/download/current/",
+        platform: ["Windows", "macOS", "Linux"]
+      }
+    ]
   },
   {
     id: "express",
@@ -142,6 +238,14 @@ export const toolsData: Tool[] = [
     tags: ["Python", "Web框架", "全功能"],
     url: "https://www.djangoproject.com",
     color: "#092E20",
+    versions: [
+      {
+        version: "5.0",
+        releaseDate: "2023-12-04",
+        downloadUrl: "https://www.djangoproject.com/download/",
+        description: "正式支持异步 ORM 和字段验证改进。"
+      }
+    ]
   },
   {
     id: "fastapi",
@@ -160,6 +264,14 @@ export const toolsData: Tool[] = [
     tags: ["Java", "企业级", "全功能"],
     url: "https://spring.io/projects/spring-boot",
     color: "#6DB33F",
+    versions: [
+      {
+        version: "3.2.0",
+        releaseDate: "2023-11-23",
+        downloadUrl: "https://spring.io/projects/spring-boot#learn",
+        description: "支持虚拟线程和最新的 Java 特性。"
+      }
+    ]
   },
 
   // 数据库
@@ -171,6 +283,14 @@ export const toolsData: Tool[] = [
     tags: ["SQL", "关系型", "开源"],
     url: "https://www.postgresql.org",
     color: "#336791",
+    versions: [
+      {
+        version: "16.1",
+        releaseDate: "2023-11-09",
+        downloadUrl: "https://www.postgresql.org/download/",
+        platform: ["Windows", "macOS", "Linux", "Source"]
+      }
+    ]
   },
   {
     id: "mysql",
@@ -180,6 +300,14 @@ export const toolsData: Tool[] = [
     tags: ["SQL", "关系型", "开源"],
     url: "https://www.mysql.com",
     color: "#00758F",
+    versions: [
+      {
+        version: "8.2.0",
+        releaseDate: "2023-10-25",
+        downloadUrl: "https://dev.mysql.com/downloads/mysql/",
+        platform: ["Windows", "macOS", "Linux"]
+      }
+    ]
   },
   {
     id: "mongodb",
@@ -218,6 +346,14 @@ export const toolsData: Tool[] = [
     tags: ["打包工具", "快速", "现代"],
     url: "https://vitejs.dev",
     color: "#646CFF",
+    versions: [
+      {
+        version: "5.0.7",
+        releaseDate: "2023-12-08",
+        downloadUrl: "https://github.com/vitejs/vite/releases",
+        description: "更快的构建速度和更小的包体积。"
+      }
+    ]
   },
   {
     id: "esbuild",
@@ -231,7 +367,7 @@ export const toolsData: Tool[] = [
   {
     id: "babel",
     title: "Babel",
-    description: "JavaScript 编译器，将现代 JavaScript 转换为向后兼容的版本",
+    description: "JavaScript 编译器，将 modern JavaScript 转换为向后兼容的版本",
     category: "构建工具",
     tags: ["编译器", "JavaScript", "兼容性"],
     url: "https://babeljs.io",
@@ -498,90 +634,15 @@ export const toolsData: Tool[] = [
     category: "云平台",
     tags: ["部署", "前端", "无服务器"],
     url: "https://www.netlify.com",
-    color: "#00C7B7",
+    color: "#00AD9F",
   },
   {
-    id: "heroku",
-    title: "Heroku",
-    description: "云应用平台，支持多种编程语言和框架的部署",
+    id: "cloudflare",
+    title: "Cloudflare",
+    description: "全球网络平台，提供 CDN、安全、边缘计算和 Pages 部署",
     category: "云平台",
-    tags: ["部署", "云", "PaaS"],
-    url: "https://www.heroku.com",
-    color: "#430098",
-  },
-
-  // 第三方库
-  {
-    id: "lodash",
-    title: "Lodash",
-    description: "JavaScript 实用函数库，提供数组、对象、字符串等操作",
-    category: "第三方库",
-    tags: ["JavaScript", "工具库", "实用"],
-    url: "https://lodash.com",
-    color: "#3492FF",
-  },
-  {
-    id: "axios",
-    title: "Axios",
-    description: "基于 Promise 的 HTTP 客户端，用于浏览器和 Node.js",
-    category: "第三方库",
-    tags: ["HTTP", "JavaScript", "异步"],
-    url: "https://axios-http.com",
-    color: "#5A29E4",
-  },
-  {
-    id: "moment",
-    title: "Day.js",
-    description: "轻量级的日期和时间库，API 与 Moment.js 兼容",
-    category: "第三方库",
-    tags: ["日期", "时间", "轻量级"],
-    url: "https://day.js.org",
-    color: "#FF7A45",
-  },
-  {
-    id: "tailwindcss",
-    title: "Tailwind CSS",
-    description: "实用型 CSS 框架，通过组合类名快速构建界面",
-    category: "第三方库",
-    tags: ["CSS", "框架", "实用"],
-    url: "https://tailwindcss.com",
-    color: "#06B6D4",
-  },
-  {
-    id: "bootstrap",
-    title: "Bootstrap",
-    description: "最流行的 CSS 框架，提供响应式组件和栅格系统",
-    category: "第三方库",
-    tags: ["CSS", "框架", "组件"],
-    url: "https://getbootstrap.com",
-    color: "#7952B3",
-  },
+    tags: ["CDN", "安全", "部署", "边缘计算"],
+    url: "https://www.cloudflare.com",
+    color: "#F38020",
+  }
 ];
-
-export const categories = [
-  "编码编辑器",
-  "版本控制",
-  "前端框架",
-  "后端框架",
-  "数据库",
-  "构建工具",
-  "包管理器",
-  "测试框架",
-  "文档工具",
-  "练手网站",
-  "学习平台",
-  "设计工具",
-  "在线工具",
-  "开发工具",
-  "生产力工具",
-  "云平台",
-  "第三方库",
-];
-
-export const getAllTags = (): string[] => {
-  const tags = new Set<string>();
-  toolsData.forEach((tool) => {
-    tool.tags.forEach((tag) => tags.add(tag));
-  });
-  return Array.from(tags).sort();
-};
