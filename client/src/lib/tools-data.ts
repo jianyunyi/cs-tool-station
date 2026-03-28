@@ -18,8 +18,6 @@ export interface Tool {
   versions?: ToolVersion[];
 }
 
-export const categories = [...new Set(toolsData.map((tool) => tool.category))].sort();
-
 export const toolsData: Tool[] = [
   // 编码编辑器与IDE
   {
@@ -648,3 +646,5 @@ export const toolsData: Tool[] = [
     color: "#F38020",
   }
 ];
+
+export const categories = [...new Set(toolsData.map((tool) => tool.category))].sort();
