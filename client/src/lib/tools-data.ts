@@ -27,6 +27,7 @@ export const toolsData: Tool[] = [
     category: "编码编辑器",
     tags: ["编辑器", "IDE", "开源"],
     url: "https://code.visualstudio.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/visualstudiocode.svg",
     color: "#007ACC",
     versions: [
       {
@@ -52,6 +53,7 @@ export const toolsData: Tool[] = [
     category: "编码编辑器",
     tags: ["IDE", "专业", "Java", "Python", "Web"],
     url: "https://www.jetbrains.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/jetbrains.svg",
     color: "#000000",
     versions: [
       {
@@ -70,6 +72,7 @@ export const toolsData: Tool[] = [
     category: "编码编辑器",
     tags: ["编辑器", "轻量级"],
     url: "https://www.sublimetext.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/sublimetext.svg",
     color: "#FF9800",
     versions: [
       {
@@ -87,6 +90,7 @@ export const toolsData: Tool[] = [
     category: "编码编辑器",
     tags: ["编辑器", "终端", "开源"],
     url: "https://neovim.io",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/neovim.svg",
     color: "#57A143",
     versions: [
       {
@@ -106,6 +110,7 @@ export const toolsData: Tool[] = [
     category: "版本控制",
     tags: ["版本控制", "开源", "必备"],
     url: "https://git-scm.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/git.svg",
     color: "#F1502F",
     versions: [
       {
@@ -123,6 +128,7 @@ export const toolsData: Tool[] = [
     category: "版本控制",
     tags: ["代码托管", "社区", "CI/CD"],
     url: "https://github.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
     color: "#181717",
   },
   {
@@ -132,6 +138,7 @@ export const toolsData: Tool[] = [
     category: "版本控制",
     tags: ["代码托管", "开源", "企业"],
     url: "https://about.gitlab.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/gitlab.svg",
     color: "#FC6D26",
   },
 
@@ -143,6 +150,7 @@ export const toolsData: Tool[] = [
     category: "前端框架",
     tags: ["JavaScript", "UI库", "组件化"],
     url: "https://react.dev",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/react.svg",
     color: "#61DAFB",
     versions: [
       {
@@ -160,6 +168,7 @@ export const toolsData: Tool[] = [
     category: "前端框架",
     tags: ["JavaScript", "框架", "渐进式"],
     url: "https://vuejs.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vuedotjs.svg",
     color: "#4FC08D",
     versions: [
       {
@@ -177,6 +186,7 @@ export const toolsData: Tool[] = [
     category: "前端框架",
     tags: ["JavaScript", "框架", "企业级"],
     url: "https://angular.io",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/angular.svg",
     color: "#DD0031",
     versions: [
       {
@@ -194,6 +204,7 @@ export const toolsData: Tool[] = [
     category: "前端框架",
     tags: ["JavaScript", "框架", "编译型"],
     url: "https://svelte.dev",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/svelte.svg",
     color: "#FF3E00",
   },
 
@@ -205,6 +216,7 @@ export const toolsData: Tool[] = [
     category: "后端框架",
     tags: ["JavaScript", "运行时", "服务器"],
     url: "https://nodejs.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nodedotjs.svg",
     color: "#339933",
     versions: [
       {
@@ -228,6 +240,7 @@ export const toolsData: Tool[] = [
     category: "后端框架",
     tags: ["Node.js", "Web框架", "轻量级"],
     url: "https://expressjs.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/express.svg",
     color: "#000000",
   },
   {
@@ -237,6 +250,7 @@ export const toolsData: Tool[] = [
     category: "后端框架",
     tags: ["Python", "Web框架", "全功能"],
     url: "https://www.djangoproject.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/django.svg",
     color: "#092E20",
     versions: [
       {
@@ -254,6 +268,7 @@ export const toolsData: Tool[] = [
     category: "后端框架",
     tags: ["Python", "API", "异步"],
     url: "https://fastapi.tiangolo.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/fastapi.svg",
     color: "#009688",
   },
   {
@@ -263,6 +278,7 @@ export const toolsData: Tool[] = [
     category: "后端框架",
     tags: ["Java", "企业级", "全功能"],
     url: "https://spring.io/projects/spring-boot",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/springboot.svg",
     color: "#6DB33F",
     versions: [
       {
@@ -282,6 +298,7 @@ export const toolsData: Tool[] = [
     category: "数据库",
     tags: ["SQL", "关系型", "开源"],
     url: "https://www.postgresql.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/postgresql.svg",
     color: "#336791",
     versions: [
       {
@@ -299,6 +316,7 @@ export const toolsData: Tool[] = [
     category: "数据库",
     tags: ["SQL", "关系型", "开源"],
     url: "https://www.mysql.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/mysql.svg",
     color: "#00758F",
     versions: [
       {
@@ -316,6 +334,7 @@ export const toolsData: Tool[] = [
     category: "数据库",
     tags: ["NoSQL", "文档数据库", "灵活"],
     url: "https://www.mongodb.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/mongodb.svg",
     color: "#13AA52",
   },
   {
@@ -325,6 +344,7 @@ export const toolsData: Tool[] = [
     category: "数据库",
     tags: ["NoSQL", "缓存", "内存"],
     url: "https://redis.io",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/redis.svg",
     color: "#DC382D",
   },
 
@@ -336,6 +356,7 @@ export const toolsData: Tool[] = [
     category: "构建工具",
     tags: ["打包工具", "JavaScript", "优化"],
     url: "https://webpack.js.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/webpack.svg",
     color: "#8DD6F9",
   },
   {
@@ -345,6 +366,7 @@ export const toolsData: Tool[] = [
     category: "构建工具",
     tags: ["打包工具", "快速", "现代"],
     url: "https://vitejs.dev",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vite.svg",
     color: "#646CFF",
     versions: [
       {
@@ -362,6 +384,7 @@ export const toolsData: Tool[] = [
     category: "构建工具",
     tags: ["打包工具", "快速", "Go"],
     url: "https://esbuild.github.io",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/esbuild.svg",
     color: "#FFCB45",
   },
   {
@@ -371,6 +394,7 @@ export const toolsData: Tool[] = [
     category: "构建工具",
     tags: ["编译器", "JavaScript", "兼容性"],
     url: "https://babeljs.io",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/babel.svg",
     color: "#F9DC3E",
   },
 
@@ -382,15 +406,17 @@ export const toolsData: Tool[] = [
     category: "包管理器",
     tags: ["包管理", "Node.js", "生态"],
     url: "https://www.npmjs.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/npm.svg",
     color: "#CB3837",
   },
   {
     id: "yarn",
     title: "Yarn",
-    description: "Facebook 开源的包管理器，提供更快和更可靠的依赖管理",
+    description: "Facebook 开源的包管理器，提供更快 and 更可靠的依赖管理",
     category: "包管理器",
     tags: ["包管理", "Node.js", "快速"],
     url: "https://yarnpkg.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/yarn.svg",
     color: "#2C8EBB",
   },
   {
@@ -400,6 +426,7 @@ export const toolsData: Tool[] = [
     category: "包管理器",
     tags: ["包管理", "高效", "现代"],
     url: "https://pnpm.io",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/pnpm.svg",
     color: "#F69220",
   },
 
@@ -411,6 +438,7 @@ export const toolsData: Tool[] = [
     category: "测试框架",
     tags: ["测试", "JavaScript", "单元测试"],
     url: "https://jestjs.io",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/jest.svg",
     color: "#15C213",
   },
   {
@@ -420,6 +448,7 @@ export const toolsData: Tool[] = [
     category: "测试框架",
     tags: ["测试", "快速", "Vite"],
     url: "https://vitest.dev",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vitest.svg",
     color: "#6BD7A8",
   },
   {
@@ -429,6 +458,7 @@ export const toolsData: Tool[] = [
     category: "测试框架",
     tags: ["测试", "Python", "单元测试"],
     url: "https://pytest.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/pytest.svg",
     color: "#0A9EDC",
   },
 
@@ -440,6 +470,7 @@ export const toolsData: Tool[] = [
     category: "文档工具",
     tags: ["文档", "静态网站", "React"],
     url: "https://docusaurus.io",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/docusaurus.svg",
     color: "#1E90FF",
   },
   {
@@ -449,6 +480,7 @@ export const toolsData: Tool[] = [
     category: "文档工具",
     tags: ["文档", "Python", "Markdown"],
     url: "https://www.mkdocs.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/mkdocs.svg",
     color: "#000000",
   },
 
@@ -460,6 +492,7 @@ export const toolsData: Tool[] = [
     category: "练手网站",
     tags: ["算法", "编程", "面试"],
     url: "https://leetcode.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/leetcode.svg",
     color: "#FFA500",
   },
   {
@@ -469,6 +502,7 @@ export const toolsData: Tool[] = [
     category: "练手网站",
     tags: ["竞技编程", "算法", "比赛"],
     url: "https://codeforces.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/codeforces.svg",
     color: "#1F1C1C",
   },
   {
@@ -478,6 +512,7 @@ export const toolsData: Tool[] = [
     category: "练手网站",
     tags: ["编程", "练习", "招聘"],
     url: "https://www.hackerrank.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/hackerrank.svg",
     color: "#2EC866",
   },
   {
@@ -487,6 +522,7 @@ export const toolsData: Tool[] = [
     category: "练手网站",
     tags: ["编程", "游戏化", "学习"],
     url: "https://www.codewars.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/codewars.svg",
     color: "#8B4513",
   },
   {
@@ -496,6 +532,7 @@ export const toolsData: Tool[] = [
     category: "练手网站",
     tags: ["数学", "算法", "编程"],
     url: "https://projecteuler.net",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/projecteuler.svg",
     color: "#000000",
   },
 
@@ -507,6 +544,7 @@ export const toolsData: Tool[] = [
     category: "学习平台",
     tags: ["在线学习", "课程", "认证"],
     url: "https://www.coursera.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/coursera.svg",
     color: "#0056D2",
   },
   {
@@ -516,6 +554,7 @@ export const toolsData: Tool[] = [
     category: "学习平台",
     tags: ["在线学习", "课程", "实惠"],
     url: "https://www.udemy.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/udemy.svg",
     color: "#EC5252",
   },
   {
@@ -525,6 +564,7 @@ export const toolsData: Tool[] = [
     category: "学习平台",
     tags: ["在线学习", "大学课程", "认证"],
     url: "https://www.edx.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/edx.svg",
     color: "#02262B",
   },
   {
@@ -534,6 +574,7 @@ export const toolsData: Tool[] = [
     category: "学习平台",
     tags: ["教程", "Web", "参考"],
     url: "https://www.w3schools.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/w3schools.svg",
     color: "#04AA6D",
   },
 
@@ -545,6 +586,7 @@ export const toolsData: Tool[] = [
     category: "设计工具",
     tags: ["设计", "协作", "原型"],
     url: "https://www.figma.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/figma.svg",
     color: "#F24E1E",
   },
   {
@@ -554,6 +596,7 @@ export const toolsData: Tool[] = [
     category: "设计工具",
     tags: ["设计", "UI", "Mac"],
     url: "https://www.sketch.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/sketch.svg",
     color: "#F7931E",
   },
 
@@ -585,6 +628,7 @@ export const toolsData: Tool[] = [
     category: "开发工具",
     tags: ["API", "测试", "协作"],
     url: "https://www.postman.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/postman.svg",
     color: "#FF6C37",
   },
   {
@@ -594,6 +638,7 @@ export const toolsData: Tool[] = [
     category: "开发工具",
     tags: ["API", "测试", "轻量级"],
     url: "https://insomnia.rest",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/insomnia.svg",
     color: "#4000BF",
   },
 
@@ -605,6 +650,7 @@ export const toolsData: Tool[] = [
     category: "生产力工具",
     tags: ["笔记", "文档", "协作"],
     url: "https://www.notion.so",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/notion.svg",
     color: "#000000",
   },
   {
@@ -614,6 +660,7 @@ export const toolsData: Tool[] = [
     category: "生产力工具",
     tags: ["笔记", "知识管理", "本地"],
     url: "https://obsidian.md",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/obsidian.svg",
     color: "#7C3AED",
   },
 
@@ -625,6 +672,7 @@ export const toolsData: Tool[] = [
     category: "云平台",
     tags: ["部署", "前端", "CI/CD"],
     url: "https://vercel.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vercel.svg",
     color: "#000000",
   },
   {
@@ -634,6 +682,7 @@ export const toolsData: Tool[] = [
     category: "云平台",
     tags: ["部署", "前端", "无服务器"],
     url: "https://www.netlify.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/netlify.svg",
     color: "#00AD9F",
   },
   {
@@ -643,6 +692,7 @@ export const toolsData: Tool[] = [
     category: "云平台",
     tags: ["CDN", "安全", "部署", "边缘计算"],
     url: "https://www.cloudflare.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/cloudflare.svg",
     color: "#F38020",
   }
 ];
