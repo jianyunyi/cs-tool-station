@@ -19,7 +19,7 @@ export interface Tool {
 }
 
 export const toolsData: Tool[] = [
-  // --- 计算机与软件工程 (原有) ---
+  // --- 计算机与软件工程 ---
   {
     id: "vscode",
     title: "Visual Studio Code",
@@ -78,15 +78,6 @@ export const toolsData: Tool[] = [
     icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/arm.svg",
     color: "#0091BD",
   },
-  {
-    id: "ltspice",
-    title: "LTspice",
-    description: "高性能 SPICE 仿真软件，用于电路原理图的捕获和波形查看",
-    category: "电子/电气",
-    tags: ["电路仿真", "SPICE", "免费"],
-    url: "https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html",
-    color: "#004B87",
-  },
 
   // --- 机械/工业设计 ---
   {
@@ -117,15 +108,6 @@ export const toolsData: Tool[] = [
     icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/autodesk.svg",
     color: "#0696D7",
   },
-  {
-    id: "fusion360",
-    title: "Autodesk Fusion 360",
-    description: "基于云的 3D CAD、CAM、CAE 和 PCB 平台",
-    category: "机械/工业",
-    tags: ["云端CAD", "工业设计", "一体化"],
-    url: "https://www.autodesk.com/products/fusion-360",
-    color: "#EA5002",
-  },
 
   // --- 土木/建筑工程 ---
   {
@@ -136,24 +118,6 @@ export const toolsData: Tool[] = [
     tags: ["BIM", "建筑设计", "结构工程"],
     url: "https://www.autodesk.com/products/revit",
     color: "#0696D7",
-    versions: [
-      {
-        version: "2024",
-        releaseDate: "2023-04",
-        downloadUrl: "https://www.autodesk.com/products/revit/free-trial",
-        platform: ["Windows"]
-      }
-    ]
-  },
-  {
-    id: "sketchup",
-    title: "SketchUp",
-    description: "直观易用的 3D 建模工具，广泛用于建筑和室内设计",
-    category: "土木/建筑",
-    tags: ["快速建模", "建筑设计", "3D"],
-    url: "https://www.sketchup.com",
-    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/sketchup.svg",
-    color: "#005F9E",
   },
 
   // --- 化学/材料工程 ---
@@ -166,17 +130,8 @@ export const toolsData: Tool[] = [
     url: "https://revvitysignals.com/products/research/chemdraw",
     color: "#0072C6",
   },
-  {
-    id: "origin",
-    title: "OriginLab",
-    description: "专业的数据分析和绘图软件，广泛用于科学研究和工程领域",
-    category: "化学/材料",
-    tags: ["数据分析", "科学绘图", "科研"],
-    url: "https://www.originlab.com",
-    color: "#E52E2E",
-  },
 
-  // --- 通用工程计算与仿真 ---
+  // --- 工程仿真 ---
   {
     id: "matlab",
     title: "MATLAB",
@@ -186,42 +141,129 @@ export const toolsData: Tool[] = [
     url: "https://www.mathworks.com/products/matlab.html",
     icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/mathworks.svg",
     color: "#ED1C24",
-    versions: [
-      {
-        version: "R2023b",
-        releaseDate: "2023-09",
-        downloadUrl: "https://www.mathworks.com/downloads/",
-        platform: ["Windows", "macOS", "Linux"]
-      }
-    ]
   },
+
+  // --- 金融/量化/财会 (新增) ---
   {
-    id: "ansys",
-    title: "Ansys",
-    description: "全球领先的工程仿真软件，涵盖结构、流体、电磁等领域",
-    category: "工程仿真",
-    tags: ["有限元分析", "仿真", "CAE"],
-    url: "https://www.ansys.com",
-    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/ansys.svg",
-    color: "#FFB400",
-  },
-  {
-    id: "comsol",
-    title: "COMSOL Multiphysics",
-    description: "多物理场仿真软件，用于模拟各种物理过程及其相互作用",
-    category: "工程仿真",
-    tags: ["多物理场", "仿真", "科研"],
-    url: "https://www.comsol.com",
+    id: "wind",
+    title: "Wind 万得终端",
+    description: "中国领先的金融数据和分析工具，广泛用于投行、券商和基金",
+    category: "金融/财会",
+    tags: ["金融数据", "投行", "分析"],
+    url: "https://www.wind.com.cn",
     color: "#004B87",
   },
   {
-    id: "labview",
-    title: "LabVIEW",
-    description: "图形化编程环境，专为测试、测量和控制应用而设计",
-    category: "工程仿真",
-    tags: ["图形化编程", "自动化测试", "仪器控制"],
-    url: "https://www.ni.com/zh-cn/shop/labview.html",
-    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nationalinstruments.svg",
-    color: "#FFD200",
+    id: "bigquant",
+    title: "BigQuant",
+    description: "人工智能量化投资平台，提供海量数据和 AI 策略开发环境",
+    category: "金融/财会",
+    tags: ["量化交易", "AI", "策略开发"],
+    url: "https://bigquant.com",
+    color: "#2C3E50",
+  },
+  {
+    id: "pandas-finance",
+    title: "Pandas Finance",
+    description: "Python 金融数据分析的核心库，支持时间序列处理和统计建模",
+    category: "金融/财会",
+    tags: ["数据分析", "Python", "开源"],
+    url: "https://pandas.pydata.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/pandas.svg",
+    color: "#150458",
+  },
+
+  // --- 数字媒体/艺术设计 (新增) ---
+  {
+    id: "figma",
+    title: "Figma",
+    description: "基于浏览器的协作式设计工具，广泛用于 UI/UX 设计",
+    category: "设计/传媒",
+    tags: ["UI设计", "协作", "矢量"],
+    url: "https://www.figma.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/figma.svg",
+    color: "#F24E1E",
+  },
+  {
+    id: "blender",
+    title: "Blender",
+    description: "开源的全能 3D 创作套件，支持建模、动画、渲染和视频编辑",
+    category: "设计/传媒",
+    tags: ["3D建模", "动画", "开源"],
+    url: "https://www.blender.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/blender.svg",
+    color: "#F5792A",
+  },
+  {
+    id: "adobe-cc",
+    title: "Adobe Creative Cloud",
+    description: "包含 Photoshop, Premiere Pro, After Effects 等全套设计工具",
+    category: "设计/传媒",
+    tags: ["图像处理", "视频剪辑", "行业标准"],
+    url: "https://www.adobe.com/creativecloud.html",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/adobe.svg",
+    color: "#FF0000",
+  },
+
+  // --- 商业分析/管理 (新增) ---
+  {
+    id: "tableau",
+    title: "Tableau",
+    description: "全球领先的数据可视化分析平台，帮助人们查看并理解数据",
+    category: "商业/管理",
+    tags: ["BI", "可视化", "商业分析"],
+    url: "https://www.tableau.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/tableau.svg",
+    color: "#E97627",
+  },
+  {
+    id: "mbalib",
+    title: "智库百科 MBA Lib",
+    description: "全球最大中文经管百科，提供海量管理模型、战略分析工具和案例",
+    category: "商业/管理",
+    tags: ["管理模型", "百科", "学习"],
+    url: "https://wiki.mbalib.com",
+    color: "#005599",
+  },
+  {
+    id: "powerbi",
+    title: "Microsoft Power BI",
+    description: "微软推出的商业智能分析服务，提供交互式可视化效果和商业智能功能",
+    category: "商业/管理",
+    tags: ["BI", "数据分析", "微软生态"],
+    url: "https://powerbi.microsoft.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/powerbi.svg",
+    color: "#F2C811",
+  },
+
+  // --- 资源站与练手项目 (新增) ---
+  {
+    id: "kaggle",
+    title: "Kaggle",
+    description: "全球最大的数据科学竞赛和资源平台，提供海量行业数据集和练手项目",
+    category: "资源/练手",
+    tags: ["数据集", "竞赛", "数据科学"],
+    url: "https://www.kaggle.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/kaggle.svg",
+    color: "#20BEFF",
+  },
+  {
+    id: "awesome-quant",
+    title: "Awesome Quant",
+    description: "GitHub 上的量化交易资源库，涵盖数据获取、策略回测到实盘部署的全流程",
+    category: "资源/练手",
+    tags: ["量化交易", "开源资源", "GitHub"],
+    url: "https://github.com/wilsonfreitas/awesome-quant",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#181717",
+  },
+  {
+    id: "uisdc",
+    title: "优设网 UISDC",
+    description: "国内极具人气的设计师交流学习平台，提供设计教程、灵感及行业资讯",
+    category: "资源/练手",
+    tags: ["设计教程", "灵感", "社区"],
+    url: "https://www.uisdc.com",
+    color: "#FF4D4D",
   }
 ];
