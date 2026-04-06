@@ -24,6 +24,14 @@ export const CATEGORY_MAP: Record<string, { label: string; subcategories: string
     label: "计算机/软件",
     subcategories: ["编辑器/IDE", "前端框架", "后端开发", "数据库", "版本控制", "开发辅助"]
   },
+  "ops": {
+    label: "运维/部署",
+    subcategories: ["容器化", "云原生", "远程连接", "监控日志", "网络工具"]
+  },
+  "security": {
+    label: "网络安全",
+    subcategories: ["渗透测试", "流量分析", "安全加固", "密码学"]
+  },
   "engineering": {
     label: "工科专业",
     subcategories: ["电子/电气", "机械/工业", "土木/建筑", "化学/材料", "工程仿真"]
@@ -68,29 +76,109 @@ export const toolsData: Tool[] = [
     ]
   },
   {
-    id: "react",
-    title: "React",
-    description: "用于构建用户界面的 JavaScript 库",
+    id: "apifox",
+    title: "Apifox",
+    description: "API 设计、开发、测试、管理一体化平台，Postman 的完美替代品",
     category: "cs",
-    subcategory: "前端框架",
-    tags: ["前端", "JavaScript", "UI"],
-    url: "https://react.dev",
-    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/react.svg",
-    color: "#61DAFB"
+    subcategory: "开发辅助",
+    tags: ["API", "测试", "文档"],
+    url: "https://apifox.com",
+    color: "#FF3C2F"
   },
   {
-    id: "nodejs",
-    title: "Node.js",
-    description: "基于 Chrome V8 引擎的 JavaScript 运行时",
+    id: "postman",
+    title: "Postman",
+    description: "全球领先的 API 开发协作平台",
     category: "cs",
-    subcategory: "后端开发",
-    tags: ["后端", "JavaScript", "Runtime"],
-    url: "https://nodejs.org",
-    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nodedotjs.svg",
-    color: "#339933"
+    subcategory: "开发辅助",
+    tags: ["API", "调试", "协作"],
+    url: "https://www.postman.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/postman.svg",
+    color: "#FF6C37"
   },
 
-  // --- 工科专业 ---
+  // --- 运维/部署 (新增) ---
+  {
+    id: "docker",
+    title: "Docker",
+    description: "开源的应用容器引擎，让开发者可以打包应用及其依赖包到一个可移植的容器中",
+    category: "ops",
+    subcategory: "容器化",
+    tags: ["容器", "虚拟化", "DevOps"],
+    url: "https://www.docker.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/docker.svg",
+    color: "#2496ED"
+  },
+  {
+    id: "kubernetes",
+    title: "Kubernetes",
+    description: "生产级别的容器编排系统，用于自动化部署、扩展和管理容器化应用",
+    category: "ops",
+    subcategory: "云原生",
+    tags: ["K8s", "编排", "集群"],
+    url: "https://kubernetes.io",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/kubernetes.svg",
+    color: "#326CE5"
+  },
+  {
+    id: "termius",
+    title: "Termius",
+    description: "跨平台的 SSH 客户端，支持多端同步和团队协作",
+    category: "ops",
+    subcategory: "远程连接",
+    tags: ["SSH", "运维", "远程"],
+    url: "https://termius.com",
+    color: "#EB5424"
+  },
+
+  // --- 网络安全 (新增) ---
+  {
+    id: "wireshark",
+    title: "Wireshark",
+    description: "世界上最广泛使用的网络协议分析器",
+    category: "security",
+    subcategory: "流量分析",
+    tags: ["抓包", "网络", "分析"],
+    url: "https://www.wireshark.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/wireshark.svg",
+    color: "#1679A7"
+  },
+  {
+    id: "burpsuite",
+    title: "Burp Suite",
+    description: "Web 应用程序安全测试的最佳工具集",
+    category: "security",
+    subcategory: "渗透测试",
+    tags: ["Web安全", "渗透", "测试"],
+    url: "https://portswigger.net/burp",
+    color: "#FF6633"
+  },
+
+  // --- 商业/管理 (办公协同) ---
+  {
+    id: "notion",
+    title: "Notion",
+    description: "集笔记、任务、数据库于一体的数字化工作空间",
+    category: "business",
+    subcategory: "办公协同",
+    tags: ["笔记", "协作", "生产力"],
+    url: "https://www.notion.so",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/notion.svg",
+    color: "#000000"
+  },
+  {
+    id: "obsidian",
+    title: "Obsidian",
+    description: "基于本地 Markdown 文件的强大知识库管理工具",
+    category: "business",
+    subcategory: "办公协同",
+    tags: ["知识库", "双链", "Markdown"],
+    url: "https://obsidian.md",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/obsidian.svg",
+    color: "#483699"
+  },
+
+  // --- 工科专业 (保留) ---
   {
     id: "altium",
     title: "Altium Designer",
@@ -103,20 +191,9 @@ export const toolsData: Tool[] = [
     color: "#A52019"
   },
   {
-    id: "solidworks",
-    title: "SolidWorks",
-    description: "领先的 3D CAD 设计软件，广泛用于机械设计、仿真和制造",
-    category: "engineering",
-    subcategory: "机械/工业",
-    tags: ["3D建模", "机械设计", "仿真"],
-    url: "https://www.solidworks.com",
-    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/dassaultsystemes.svg",
-    color: "#DC1928"
-  },
-  {
     id: "matlab",
     title: "MATLAB",
-    description: "用于数值计算、可视化和编程的高级语言和交互式环境",
+    description: "用于数值计算、可视化和编程的高级语言 and 交互式环境",
     category: "engineering",
     subcategory: "工程仿真",
     tags: ["数值计算", "算法开发", "全能"],
@@ -125,29 +202,19 @@ export const toolsData: Tool[] = [
     color: "#ED1C24"
   },
 
-  // --- 金融/量化/财会 ---
+  // --- 金融/量化 ---
   {
     id: "wind",
     title: "Wind 万得终端",
-    description: "中国领先的金融数据和分析工具，广泛用于投行、券商和基金",
+    description: "中国领先的金融数据和分析工具",
     category: "finance",
     subcategory: "金融终端",
     tags: ["金融数据", "投行", "分析"],
     url: "https://www.wind.com.cn",
     color: "#004B87"
   },
-  {
-    id: "bigquant",
-    title: "BigQuant",
-    description: "人工智能量化投资平台，提供海量数据和 AI 策略开发环境",
-    category: "finance",
-    subcategory: "量化交易",
-    tags: ["量化交易", "AI", "策略开发"],
-    url: "https://bigquant.com",
-    color: "#2C3E50"
-  },
 
-  // --- 数字媒体/艺术设计 ---
+  // --- 设计/传媒 ---
   {
     id: "figma",
     title: "Figma",
@@ -159,36 +226,12 @@ export const toolsData: Tool[] = [
     icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/figma.svg",
     color: "#F24E1E"
   },
-  {
-    id: "blender",
-    title: "Blender",
-    description: "开源的全能 3D 创作套件，支持建模、动画、渲染和视频编辑",
-    category: "design",
-    subcategory: "3D建模/动画",
-    tags: ["3D建模", "动画", "开源"],
-    url: "https://www.blender.org",
-    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/blender.svg",
-    color: "#F5792A"
-  },
 
-  // --- 商业分析/管理 ---
-  {
-    id: "tableau",
-    title: "Tableau",
-    description: "全球领先的数据可视化分析平台，帮助人们查看并理解数据",
-    category: "business",
-    subcategory: "BI分析",
-    tags: ["BI", "可视化", "商业分析"],
-    url: "https://www.tableau.com",
-    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/tableau.svg",
-    color: "#E97627"
-  },
-
-  // --- 资源站与练手项目 ---
+  // --- 资源/练手 ---
   {
     id: "kaggle",
     title: "Kaggle",
-    description: "全球最大的数据科学竞赛和资源平台，提供海量行业数据集和练手项目",
+    description: "全球最大的数据科学竞赛和资源平台",
     category: "resources",
     subcategory: "数据集/竞赛",
     tags: ["数据集", "竞赛", "数据科学"],
