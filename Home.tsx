@@ -1,30 +1,32 @@
 import { Input } from "@/components/ui/input";
 import ToolCard from "@/components/ToolCard";
-import { toolsData } from "@/lib/tools-data";
+import { toolsData, CATEGORY_MAP } from "@/lib/tools-data";
 import { 
   Search, Sparkles, LayoutGrid, Code2, Cpu, Settings, 
   Building2, FlaskConical, Binary, Landmark, Palette, 
-  Briefcase, GraduationCap, Github 
+  Briefcase, GraduationCap, Github, ChevronRight, Home as HomeIcon
 } from "lucide-react";
 import { useState, useMemo } from "react";
+import { useRoute, Link } from "wouter";
 
-const CATEGORIES = [
-  { name: "全部", icon: LayoutGrid },
-  { name: "计算机/软件", icon: Code2 },
-  { name: "电子/电气", icon: Cpu },
-  { name: "机械/工业", icon: Settings },
-  { name: "土木/建筑", icon: Building2 },
-  { name: "化学/材料", icon: FlaskConical },
-  { name: "工程仿真", icon: Binary },
-  { name: "金融/财会", icon: Landmark },
-  { name: "设计/传媒", icon: Palette },
-  { name: "商业/管理", icon: Briefcase },
-  { name: "资源/练手", icon: GraduationCap },
-];
+const CATEGORY_ICONS: Record<string, any> = {
+  "cs": Code2,
+  "engineering": Cpu,
+  "finance": Landmark,
+  "design": Palette,
+  "business": Briefcase,
+  "resources": GraduationCap
+};
 
 export default function Home() {
   const [search, setSearch] = useState("");
-  const [activeCategory, setActiveCategory] = useState("全部");
+  
+  // 获取当前路由参数
+  const [matchCategory, paramsCategory] = useRoute("/category/:category");
+  const [matchSubcategory, paramsSubcategory] = useRoute("/category/:category/:subcategory");
+  
+  const activeCategory = paramsCategory?.category || paramsSubcategory?.category || "all";
+  const activeSubcategory = paramsSubcategory?.subcategory || "all";
 
   const filteredTools = useMemo(() => {
     return toolsData.filter((tool) => {
@@ -33,91 +35,126 @@ export default function Home() {
         tool.description.toLowerCase().includes(search.toLowerCase()) ||
         tool.tags.some(tag => tag.toLowerCase().includes(search.toLowerCase()));
       
-      const matchesCategory = activeCategory === "全部" || tool.category === activeCategory;
+      const matchesCategory = activeCategory === "all" || tool.category === activeCategory;
+      const matchesSubcategory = activeSubcategory === "all" || tool.subcategory === activeSubcategory;
       
-      return matchesSearch && matchesCategory;
+      return matchesSearch && matchesCategory && matchesSubcategory;
     });
-  }, [search, activeCategory]);
+  }, [search, activeCategory, activeSubcategory]);
 
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
+    <div className="min-h-screen bg-background relative overflow-hidden flex flex-col md:flex-row">
       {/* 背景装饰渐变 */}
-      <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/2 -left-24 w-72 h-72 bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
-
-      <div className="container mx-auto py-16 px-4 relative z-10">
-        {/* Header Section */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-black uppercase tracking-widest animate-fade-in">
-            <Sparkles className="h-3.5 w-3.5" />
-            全领域专业工具导航
+      <div className="fixed top-0 left-0 w-full h-[500px] bg-gradient-to-b from-primary/5 to-transparent pointer-events-none z-0" />
+      
+      {/* 侧边栏导航 (Sidebar) */}
+      <aside className="w-full md:w-72 bg-card/30 backdrop-blur-2xl border-r border-border/50 sticky top-0 h-auto md:h-screen overflow-y-auto z-20 flex flex-col p-6">
+        <div className="flex items-center gap-3 mb-10 px-2">
+          <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+            <div className="w-5 h-5 rounded-full bg-primary shadow-[0_0_15px_rgba(var(--primary),0.5)]" />
           </div>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-foreground leading-[1.1]">
-            CS TOOL <span className="text-primary italic">STATION</span>
-          </h1>
-          <p className="text-xl text-muted-foreground font-medium leading-relaxed">
-            为您精选计算机、工科、金融、设计及商业管理等全领域的顶尖工具与实战资源。
-          </p>
-          <div className="pt-4">
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-border bg-card/50 backdrop-blur-sm text-sm font-bold text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all duration-300"
-            >
-              <Github className="h-4 w-4" />
-              Star on GitHub
-            </a>
+          <span className="font-black tracking-tighter text-xl italic text-foreground uppercase">CS STATION</span>
+        </div>
+
+        <nav className="space-y-6 flex-1">
+          <div>
+            <Link href="/">
+              <a className={`flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-bold transition-all ${activeCategory === "all" ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20" : "text-muted-foreground hover:bg-primary/5 hover:text-primary"}`}>
+                <LayoutGrid className="h-4 w-4" />
+                全部领域
+              </a>
+            </Link>
+          </div>
+
+          {Object.entries(CATEGORY_MAP).map(([key, config]) => {
+            const Icon = CATEGORY_ICONS[key] || Code2;
+            const isCategoryActive = activeCategory === key;
+            
+            return (
+              <div key={key} className="space-y-1">
+                <Link href={`/category/${key}`}>
+                  <a className={`flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-bold transition-all ${isCategoryActive && activeSubcategory === "all" ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20" : isCategoryActive ? "text-primary bg-primary/5" : "text-muted-foreground hover:bg-primary/5 hover:text-primary"}`}>
+                    <Icon className="h-4 w-4" />
+                    {config.label}
+                  </a>
+                </Link>
+                
+                {/* 二级功能分类 */}
+                {isCategoryActive && (
+                  <div className="ml-9 space-y-1 border-l border-primary/20 pl-4 py-1 animate-in slide-in-from-left-2 duration-300">
+                    {config.subcategories.map(sub => (
+                      <Link key={sub} href={`/category/${key}/${sub}`}>
+                        <a className={`block py-1.5 text-xs font-bold transition-all ${activeSubcategory === sub ? "text-primary" : "text-muted-foreground/60 hover:text-primary"}`}>
+                          {sub}
+                        </a>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </nav>
+
+        <div className="pt-8 border-t border-border/50 mt-auto">
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-xs font-bold text-muted-foreground hover:text-foreground transition-all"
+          >
+            <Github className="h-4 w-4" />
+            GitHub Star
+          </a>
+        </div>
+      </aside>
+
+      {/* 主内容区 */}
+      <main className="flex-1 relative z-10 p-4 md:p-10 lg:p-16 max-w-7xl">
+        {/* Breadcrumbs & Search */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted-foreground/60">
+            <Link href="/"><a className="hover:text-primary transition-colors"><HomeIcon className="h-3 w-3" /></a></Link>
+            <ChevronRight className="h-3 w-3" />
+            {activeCategory !== "all" && (
+              <>
+                <Link href={`/category/${activeCategory}`}><a className="hover:text-primary transition-colors">{CATEGORY_MAP[activeCategory]?.label}</a></Link>
+                {activeSubcategory !== "all" && (
+                  <>
+                    <ChevronRight className="h-3 w-3" />
+                    <span className="text-primary">{activeSubcategory}</span>
+                  </>
+                )}
+              </>
+            )}
+            {activeCategory === "all" && <span className="text-primary">全部工具</span>}
+          </div>
+
+          <div className="relative w-full md:w-80 group">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground group-focus-within:text-primary transition-colors" />
+            <Input
+              placeholder="搜索工具名称..."
+              className="h-10 pl-11 pr-4 bg-card/40 backdrop-blur-xl border-border/50 rounded-xl text-sm focus-visible:ring-primary/20"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
           </div>
         </div>
 
-        {/* Search & Filter Section */}
-        <div className="max-w-5xl mx-auto mb-12 space-y-8">
-          <div className="relative group">
-            <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative flex items-center bg-card/50 backdrop-blur-xl border border-border/50 rounded-2xl p-2 shadow-2xl">
-              <Search className="absolute left-6 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
-              <Input
-                placeholder="搜索工具、资源或练手项目（如 Kaggle, Bloomberg, Figma...）"
-                className="h-14 pl-14 pr-6 bg-transparent border-none text-lg font-medium focus-visible:ring-0 placeholder:text-muted-foreground/50"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-              />
-            </div>
-          </div>
-
-          {/* Category Tabs */}
-          <div className="flex flex-wrap justify-center gap-3">
-            {CATEGORIES.map((cat) => {
-              const Icon = cat.icon;
-              const isActive = activeCategory === cat.name;
-              return (
-                <button
-                  key={cat.name}
-                  onClick={() => setActiveCategory(cat.name)}
-                  className={`
-                    flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 border
-                    ${isActive 
-                      ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/25 scale-105" 
-                      : "bg-card/40 backdrop-blur-md text-muted-foreground border-border/50 hover:border-primary/30 hover:bg-card/60"
-                    }
-                  `}
-                >
-                  <Icon className={`h-4 w-4 ${isActive ? "animate-pulse" : "opacity-70"}`} />
-                  {cat.name}
-                </button>
-              );
-            })}
-          </div>
+        {/* Page Title */}
+        <div className="mb-12 space-y-4">
+          <h1 className="text-4xl md:text-5xl font-black tracking-tighter text-foreground">
+            {activeSubcategory !== "all" ? activeSubcategory : activeCategory !== "all" ? CATEGORY_MAP[activeCategory]?.label : "全领域工具导航"}
+          </h1>
+          <p className="text-muted-foreground font-medium text-lg">
+            {activeSubcategory !== "all" ? `精选 ${activeSubcategory} 相关的顶级开发与设计工具。` : "为您搜罗全球范围内各专业领域的顶尖生产力工具。"}
+          </p>
         </div>
 
         {/* Results Count */}
-        <div className="mb-8 flex items-center justify-between">
-          <div className="text-sm font-bold text-muted-foreground/60 uppercase tracking-widest flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-            当前分类下找到 {filteredTools.length} 个工具/资源
-          </div>
+        <div className="mb-8 flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-primary">
+          <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+          当前分类下找到 {filteredTools.length} 个资源
         </div>
 
         {/* Tools Grid */}
@@ -132,31 +169,11 @@ export default function Home() {
             <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-muted mb-6">
               <Search className="h-10 w-10 text-muted-foreground/30" />
             </div>
-            <h3 className="text-2xl font-bold mb-2">未找到匹配工具</h3>
+            <h3 className="text-2xl font-bold mb-2 text-foreground">未找到匹配工具</h3>
             <p className="text-muted-foreground">试试搜索其他关键词或切换分类</p>
           </div>
         )}
-      </div>
-
-      {/* Footer Section */}
-      <footer className="py-20 border-t border-border/50 relative overflow-hidden">
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
-              <div className="w-6 h-6 rounded-full bg-primary shadow-[0_0_15px_rgba(var(--primary),0.5)]" />
-            </div>
-            <span className="font-black tracking-tighter text-2xl italic text-foreground uppercase">CS TOOL STATION</span>
-          </div>
-          <p className="text-muted-foreground/60 font-bold text-sm uppercase tracking-[0.2em] mb-8">
-            Professional tools & resources for all career paths
-          </p>
-          <div className="flex justify-center gap-8">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-bold text-xs uppercase tracking-widest">关于我们</a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-bold text-xs uppercase tracking-widest">提交工具</a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-bold text-xs uppercase tracking-widest">开源协议</a>
-          </div>
-        </div>
-      </footer>
+      </main>
     </div>
   );
 }
