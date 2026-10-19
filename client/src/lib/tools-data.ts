@@ -695,6 +695,173 @@ export const toolsData: Tool[] = [
     icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/cloudflare.svg",
     color: "#F38020",
   }
+
+  // --- 人工智能 ---
+  {
+    id: "chatgpt",
+    title: "ChatGPT",
+    description: "OpenAI 的旗舰对话大模型，写代码、写作、问答全能选手",
+    category: "人工智能",
+    tags: ["AI对话", "大模型", "全能"],
+    url: "https://chatgpt.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/openai.svg",
+    color: "#10A37F"
+  },
+  {
+    id: "claude",
+    title: "Claude",
+    description: "Anthropic 的对话 AI，长文本理解和代码能力突出",
+    category: "人工智能",
+    tags: ["AI对话", "大模型", "代码"],
+    url: "https://claude.ai",
+    color: "#D97757"
+  },
+  {
+    id: "gemini",
+    title: "Gemini",
+    description: "Google 的多模态大模型，与搜索和办公生态深度整合",
+    category: "人工智能",
+    tags: ["AI对话", "大模型", "多模态"],
+    url: "https://gemini.google.com",
+    color: "#1A73E8"
+  },
+  {
+    id: "deepseek",
+    title: "DeepSeek",
+    description: "国产高性价比大模型，推理能力强，API 价格实惠",
+    category: "人工智能",
+    tags: ["AI对话", "大模型", "推理"],
+    url: "https://chat.deepseek.com",
+    color: "#4D6BFE"
+  },
+  {
+    id: "grok",
+    title: "Grok",
+    description: "xAI 的对话模型，实时联网获取最新信息，风格直接",
+    category: "人工智能",
+    tags: ["AI对话", "大模型", "联网"],
+    url: "https://grok.com",
+    color: "#000000"
+  },
+  {
+    id: "perplexity",
+    title: "Perplexity",
+    description: "AI 搜索引擎，每个回答都附带可验证的引用来源",
+    category: "人工智能",
+    tags: ["AI搜索", "问答", "引用"],
+    url: "https://www.perplexity.ai",
+    color: "#20B8CD"
+  },
+  {
+    id: "kimi",
+    title: "Kimi",
+    description: "月之暗面的智能助手，超长文本处理是强项",
+    category: "人工智能",
+    tags: ["AI对话", "长文本", "国产"],
+    url: "https://kimi.moonshot.cn",
+    color: "#000000"
+  },
+  {
+    id: "midjourney",
+    title: "Midjourney",
+    description: "顶级的 AI 绘画工具，艺术质感和审美出众",
+    category: "人工智能",
+    tags: ["AI绘画", "作图", "艺术"],
+    url: "https://www.midjourney.com",
+    color: "#000000"
+  },
+  {
+    id: "leonardo",
+    title: "Leonardo AI",
+    description: "AI 绘画与游戏资产生成平台，模型丰富可微调",
+    category: "人工智能",
+    tags: ["AI绘画", "游戏资产", "模型"],
+    url: "https://leonardo.ai",
+    color: "#7C3AED"
+  },
+  {
+    id: "civitai",
+    title: "Civitai",
+    description: "AI 绘画模型分享社区，海量 Stable Diffusion 模型和 LoRA",
+    category: "人工智能",
+    tags: ["模型社区", "分享", "LoRA"],
+    url: "https://civitai.com",
+    color: "#0EA5E9"
+  },
+  {
+    id: "runway",
+    title: "Runway",
+    description: "AI 视频生成与剪辑平台，Gen 系列模型持续领先",
+    category: "人工智能",
+    tags: ["AI视频", "生成", "剪辑"],
+    url: "https://runwayml.com",
+    color: "#000000"
+  },
+  {
+    id: "pika",
+    title: "Pika",
+    description: "文生视频工具，几句话生成创意短片",
+    category: "人工智能",
+    tags: ["AI视频", "生成", "创意"],
+    url: "https://pika.art",
+    color: "#EC4899"
+  },
+  {
+    id: "copilot",
+    title: "Muse",
+    description: "GitHub 的 AI 结对编程助手，补全代码又快又准",
+    category: "人工智能",
+    tags: ["代码补全", "编程", "AI"],
+    url: "https://github.com/features/copilot",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#000000"
+  },
+  {
+    id: "cursor",
+    title: "Cursor",
+    description: "AI 原生代码编辑器，Agent 式编程体验",
+    category: "人工智能",
+    tags: ["编辑器", "Agent", "编程"],
+    url: "https://cursor.com",
+    color: "#000000"
+  },
+  {
+    id: "suno",
+    title: "Suno",
+    description: "AI 音乐生成，一句话描述就能写出一首歌",
+    category: "人工智能",
+    tags: ["AI音乐", "生成", "作曲"],
+    url: "https://suno.com",
+    color: "#000000"
+  },
+  {
+    id: "elevenlabs",
+    title: "ElevenLabs",
+    description: "逼真的 AI 语音合成与声音克隆，支持多语言",
+    category: "人工智能",
+    tags: ["语音合成", "配音", "克隆"],
+    url: "https://elevenlabs.io",
+    color: "#000000"
+  },
+  {
+    id: "ollama",
+    title: "Ollama",
+    description: "本地运行大模型，一条命令就能拉起 llama 等模型",
+    category: "人工智能",
+    tags: ["本地部署", "大模型", "开源"],
+    url: "https://ollama.com",
+    color: "#000000"
+  },
+  {
+    id: "comfyui",
+    title: "ComfyUI",
+    description: "节点式 AI 绘画工作流，高度可定制，玩 Stable Diffusion 必备",
+    category: "人工智能",
+    tags: ["工作流", "节点", "开源"],
+    url: "https://github.com/comfyanonymous/ComfyUI",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#000000"
+  }
 ];
 
 export const categories = [...new Set(toolsData.map((tool) => tool.category))].sort();
