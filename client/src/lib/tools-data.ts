@@ -1044,6 +1044,728 @@ export const toolsData: Tool[] = [
     icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
     color: "#7C3AED"
   }
+,
+  // --- 全栈开发补完 ---
+  {
+    id: "nextjs",
+    title: "Next.js",
+    description: "React 全栈框架，SSR/SSG 开箱即用，Vercel 亲儿子，做 React 项目首选",
+    category: "前端框架",
+    tags: ["React", "SSR", "全能"],
+    url: "https://nextjs.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nextdotjs.svg",
+    color: "#000000"
+  },
+  {
+    id: "nuxt",
+    title: "Nuxt",
+    description: "Vue 全栈框架，约定式路由+自动导入，Vue 生态的 Next.js",
+    category: "前端框架",
+    tags: ["Vue", "SSR", "全能"],
+    url: "https://nuxt.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nuxtdotjs.svg",
+    color: "#00DC82"
+  },
+  {
+    id: "astro",
+    title: "Astro",
+    description: "群岛架构的静态站点框架，只给交互部分发 JS，快得离谱",
+    category: "前端框架",
+    tags: ["静态站点", "性能", "群岛"],
+    url: "https://astro.build",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/astro.svg",
+    color: "#FF5D01"
+  },
+  {
+    id: "solidjs",
+    title: "SolidJS",
+    description: "细粒度响应的前端框架，React 写法、原生 DOM 性能",
+    category: "前端框架",
+    tags: ["响应式", "性能", "类React"],
+    url: "https://www.solidjs.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#2C4F7C"
+  },
+  {
+    id: "qwik",
+    title: "Qwik",
+    description: "可恢复性前端框架，首屏零 JS hydration，性能天花板",
+    category: "前端框架",
+    tags: ["性能", "SSR", "创新"],
+    url: "https://qwik.dev",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#AC7EF4"
+  },
+  {
+    id: "remix",
+    title: "Remix",
+    description: "拥抱 Web 标准的 React 全栈框架，表单+嵌套路由是灵魂",
+    category: "前端框架",
+    tags: ["React", "全栈", "Web标准"],
+    url: "https://remix.run",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#000000"
+  },
+  {
+    id: "preact",
+    title: "Preact",
+    description: "3KB 的 React 替代品，API 兼容，嵌入小部件和轻量场景神器",
+    category: "前端框架",
+    tags: ["轻量", "兼容React", "小体积"],
+    url: "https://preactjs.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/preact.svg",
+    color: "#673AB8"
+  },
+  {
+    id: "tailwindcss",
+    title: "Tailwind CSS",
+    description: "原子化 CSS 框架，类名即样式，快速堆出好看页面的标配",
+    category: "前端框架",
+    tags: ["CSS", "原子化", "样式"],
+    url: "https://tailwindcss.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/tailwindcss.svg",
+    color: "#06B6D4"
+  },
+  {
+    id: "bootstrap",
+    title: "Bootstrap",
+    description: "最经典的 CSS 组件库，栅格+组件一把梭，管理后台速成",
+    category: "前端框架",
+    tags: ["CSS", "组件库", "响应式"],
+    url: "https://getbootstrap.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/bootstrap.svg",
+    color: "#7952B3"
+  },
+  {
+    id: "sass",
+    title: "Sass",
+    description: "CSS 预处理器，变量嵌套 mixin，大型样式表的组织方式",
+    category: "前端框架",
+    tags: ["CSS", "预处理", "样式"],
+    url: "https://sass-lang.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/sass.svg",
+    color: "#CC6699"
+  },
+  {
+    id: "nestjs",
+    title: "NestJS",
+    description: "Node.js 企业级框架，装饰器+模块化，TypeScript 后端的 Spring",
+    category: "后端框架",
+    tags: ["Node.js", "TypeScript", "企业级"],
+    url: "https://nestjs.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nestjs.svg",
+    color: "#E0234E"
+  },
+  {
+    id: "fastify",
+    title: "Fastify",
+    description: "高性能 Node.js 框架，Schema 校验内置，比 Express 快数倍",
+    category: "后端框架",
+    tags: ["Node.js", "高性能", "API"],
+    url: "https://fastify.dev",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/fastify.svg",
+    color: "#000000"
+  },
+  {
+    id: "koa",
+    title: "Koa",
+    description: "Express 原班人马的下一代，洋葱圈中间件，小而美",
+    category: "后端框架",
+    tags: ["Node.js", "中间件", "轻量"],
+    url: "https://koajs.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/koa.svg",
+    color: "#33333D"
+  },
+  {
+    id: "flask",
+    title: "Flask",
+    description: "Python 微框架，一文件起服务，原型验证最快的一条路",
+    category: "后端框架",
+    tags: ["Python", "微框架", "轻量"],
+    url: "https://flask.palletsprojects.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/flask.svg",
+    color: "#000000"
+  },
+  {
+    id: "gin",
+    title: "Gin",
+    description: "Go 最流行的 Web 框架，路由快、中间件全，API 服务标配",
+    category: "后端框架",
+    tags: ["Go", "高性能", "API"],
+    url: "https://gin-gonic.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#00ADD8"
+  },
+  {
+    id: "fiber",
+    title: "Fiber",
+    description: "Go 的 Express 风格框架，基于 Fasthttp，性能怪兽",
+    category: "后端框架",
+    tags: ["Go", "高性能", "类Express"],
+    url: "https://gofiber.io",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#000000"
+  },
+  {
+    id: "laravel",
+    title: "Laravel",
+    description: "PHP 王者框架，优雅语法+全家桶，单人全栈接单利器",
+    category: "后端框架",
+    tags: ["PHP", "全栈", "优雅"],
+    url: "https://laravel.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/laravel.svg",
+    color: "#FF2D20"
+  },
+  {
+    id: "rails",
+    title: "Ruby on Rails",
+    description: "全栈鼻祖，约定大于配置，独立开发快速上线神器",
+    category: "后端框架",
+    tags: ["Ruby", "全栈", "快速开发"],
+    url: "https://rubyonrails.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/rubyonrails.svg",
+    color: "#CC0000"
+  },
+  {
+    id: "hono",
+    title: "Hono",
+    description: "超轻量 Web 框架，跑在任何 JS 运行时，边缘计算首选",
+    category: "后端框架",
+    tags: ["JS运行时", "边缘", "轻量"],
+    url: "https://hono.dev",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#000000"
+  },
+  {
+    id: "dotnet",
+    title: "ASP.NET Core",
+    description: "微软跨平台后端框架，高性能+强类型，企业级首选",
+    category: "后端框架",
+    tags: ["C#", "跨平台", "企业级"],
+    url: "https://dotnet.microsoft.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/dotnet.svg",
+    color: "#512BD4"
+  },
+  {
+    id: "sqlite",
+    title: "SQLite",
+    description: "零配置嵌入式数据库，单文件跑全栈，小项目和本地开发神器",
+    category: "数据库",
+    tags: ["嵌入式", "轻量", "零配置"],
+    url: "https://www.sqlite.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/sqlite.svg",
+    color: "#003B57"
+  },
+  {
+    id: "supabase",
+    title: "Supabase",
+    description: "开源 Firebase 替代，Postgres+鉴权+存储，开箱即用的后端",
+    category: "数据库",
+    tags: ["BaaS", "Postgres", "开源"],
+    url: "https://supabase.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/supabase.svg",
+    color: "#3ECF8E"
+  },
+  {
+    id: "prisma",
+    title: "Prisma",
+    description: "Node.js 下一代 ORM，类型安全的数据库访问，DX 拉满",
+    category: "数据库",
+    tags: ["ORM", "TypeScript", "类型安全"],
+    url: "https://www.prisma.io",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/prisma.svg",
+    color: "#2D3748"
+  },
+  {
+    id: "drizzle",
+    title: "Drizzle ORM",
+    description: "轻量 TypeScript ORM，SQL 味浓、体积小，Prisma 的轻量替代",
+    category: "数据库",
+    tags: ["ORM", "TypeScript", "轻量"],
+    url: "https://orm.drizzle.team",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#C5F74F"
+  },
+  {
+    id: "planetscale",
+    title: "PlanetScale",
+    description: "Serverless MySQL 平台，分支式 schema 变更，像用 Git 管数据库",
+    category: "数据库",
+    tags: ["MySQL", "Serverless", "分支"],
+    url: "https://planetscale.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/planetscale.svg",
+    color: "#000000"
+  },
+  {
+    id: "neon",
+    title: "Neon",
+    description: "Serverless Postgres，秒级分支、自动休眠，开发体验极佳",
+    category: "数据库",
+    tags: ["Postgres", "Serverless", "分支"],
+    url: "https://neon.tech",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#00E599"
+  },
+  {
+    id: "elasticsearch",
+    title: "Elasticsearch",
+    description: "分布式搜索与分析引擎，全文检索、日志分析的事实标准",
+    category: "数据库",
+    tags: ["搜索", "日志", "分布式"],
+    url: "https://www.elastic.co",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/elasticsearch.svg",
+    color: "#005571"
+  },
+  {
+    id: "firebase",
+    title: "Firebase",
+    description: "Google 一站式后端，鉴权数据库推送全包，独立开发快速起盘",
+    category: "数据库",
+    tags: ["BaaS", "Google", "全包"],
+    url: "https://firebase.google.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/firebase.svg",
+    color: "#FFCA28"
+  },
+  {
+    id: "typescript",
+    title: "TypeScript",
+    description: "带类型的 JavaScript，大型项目标配， Bug 在编译期现形",
+    category: "开发工具",
+    tags: ["语言", "类型安全", "前端"],
+    url: "https://www.typescriptlang.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/typescript.svg",
+    color: "#3178C6"
+  },
+  {
+    id: "javascript",
+    title: "JavaScript",
+    description: "Web 的语言，前后端通吃，生态最大没有之一",
+    category: "开发工具",
+    tags: ["语言", "Web", "生态"],
+    url: "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/javascript.svg",
+    color: "#F7DF1E"
+  },
+  {
+    id: "python",
+    title: "Python",
+    description: "胶水语言之王，AI/数据/后端全都要会一点",
+    category: "开发工具",
+    tags: ["语言", "AI", "后端"],
+    url: "https://www.python.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/python.svg",
+    color: "#3776AB"
+  },
+  {
+    id: "go",
+    title: "Go",
+    description: "云原生时代的语言，简单高效，并发模型漂亮",
+    category: "开发工具",
+    tags: ["语言", "云原生", "并发"],
+    url: "https://go.dev",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/go.svg",
+    color: "#00ADD8"
+  },
+  {
+    id: "rust",
+    title: "Rust",
+    description: "内存安全无 GC，性能拉满，系统编程和 WebAssembly 的未来",
+    category: "开发工具",
+    tags: ["语言", "性能", "内存安全"],
+    url: "https://www.rust-lang.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/rust.svg",
+    color: "#000000"
+  },
+  {
+    id: "java",
+    title: "Java",
+    description: "企业级老炮，生态深不见底，Spring 全家桶的家",
+    category: "开发工具",
+    tags: ["语言", "企业级", "生态"],
+    url: "https://www.java.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#ED8B00"
+  },
+  {
+    id: "php",
+    title: "PHP",
+    description: "Web 常青树，Laravel 加持下依然是接单赚钱利器",
+    category: "开发工具",
+    tags: ["语言", "Web", "接单"],
+    url: "https://www.php.net",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/php.svg",
+    color: "#777BB4"
+  },
+  {
+    id: "ruby",
+    title: "Ruby",
+    description: "优雅的脚本语言，Rails 让它成为全栈神器",
+    category: "开发工具",
+    tags: ["语言", "优雅", "全栈"],
+    url: "https://www.ruby-lang.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/ruby.svg",
+    color: "#CC342D"
+  },
+  {
+    id: "csharp",
+    title: "C#",
+    description: "微软亲儿子，.NET/Unity 通吃，强类型开发体验一流",
+    category: "开发工具",
+    tags: ["语言", ".NET", "强类型"],
+    url: "https://learn.microsoft.com/dotnet/csharp",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#239120"
+  },
+  {
+    id: "kotlin",
+    title: "Kotlin",
+    description: "Android 官方语言，比 Java 爽十倍，也能写后端",
+    category: "开发工具",
+    tags: ["语言", "Android", "现代"],
+    url: "https://kotlinlang.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/kotlin.svg",
+    color: "#7F52FF"
+  },
+  {
+    id: "swift",
+    title: "Swift",
+    description: "苹果全家桶语言，iOS/macOS 开发唯一真神",
+    category: "开发工具",
+    tags: ["语言", "iOS", "苹果"],
+    url: "https://www.swift.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/swift.svg",
+    color: "#F05138"
+  },
+  {
+    id: "dart",
+    title: "Dart",
+    description: "Flutter 的语言，一套代码跑全端",
+    category: "开发工具",
+    tags: ["语言", "Flutter", "跨端"],
+    url: "https://dart.dev",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/dart.svg",
+    color: "#0175C2"
+  },
+  {
+    id: "docker",
+    title: "Docker",
+    description: "容器化标配，打包一次到处运行，部署烦恼终结者",
+    category: "开发工具",
+    tags: ["容器", "部署", "标准化"],
+    url: "https://www.docker.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/docker.svg",
+    color: "#2496ED"
+  },
+  {
+    id: "kubernetes",
+    title: "Kubernetes",
+    description: "容器编排事实标准，生产级调度的必修课",
+    category: "开发工具",
+    tags: ["容器", "编排", "生产级"],
+    url: "https://kubernetes.io",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/kubernetes.svg",
+    color: "#326CE5"
+  },
+  {
+    id: "trpc",
+    title: "tRPC",
+    description: "前后端类型共享的 API 方案，写 TS 全栈不用再对接口",
+    category: "开发工具",
+    tags: ["API", "类型安全", "全栈"],
+    url: "https://trpc.io",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/trpc.svg",
+    color: "#2596BE"
+  },
+  {
+    id: "graphql",
+    title: "GraphQL",
+    description: "Meta 出品的查询语言，一次请求拿全数据，前端自由",
+    category: "开发工具",
+    tags: ["API", "查询语言", "灵活"],
+    url: "https://graphql.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/graphql.svg",
+    color: "#E10098"
+  },
+  {
+    id: "yeoman",
+    title: "Yeoman",
+    description: "老牌脚手架工具，海量 generator，一键生成项目骨架",
+    category: "开发工具",
+    tags: ["脚手架", "生成器", "效率"],
+    url: "https://yeoman.io",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/yeoman.svg",
+    color: "#000000"
+  },
+  {
+    id: "bruno",
+    title: "Bruno",
+    description: "开源 API 客户端新贵，Postman 平替，请求文件可进 Git",
+    category: "开发工具",
+    tags: ["API", "测试", "开源"],
+    url: "https://www.usebruno.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#000000"
+  },
+  {
+    id: "rollup",
+    title: "Rollup",
+    description: "JS 库打包首选，Tree-shaking 标杆，Vite 底层功臣",
+    category: "构建工具",
+    tags: ["打包", "库", "TreeShaking"],
+    url: "https://rollupjs.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/rollupdotjs.svg",
+    color: "#EC4A3F"
+  },
+  {
+    id: "swc",
+    title: "SWC",
+    description: "Rust 写的 JS/TS 编译器，比 Babel 快 20 倍",
+    category: "构建工具",
+    tags: ["编译", "Rust", "极速"],
+    url: "https://swc.rs",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#000000"
+  },
+  {
+    id: "turborepo",
+    title: "Turborepo",
+    description: "JS monorepo 构建编排，缓存拉满，Vercel 出品",
+    category: "构建工具",
+    tags: ["Monorepo", "缓存", "构建"],
+    url: "https://turbo.build",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/turborepo.svg",
+    color: "#EF4444"
+  },
+  {
+    id: "nx",
+    title: "Nx",
+    description: "企业级 monorepo 方案，Angular 团队出品，功能最全",
+    category: "构建工具",
+    tags: ["Monorepo", "企业级", "构建"],
+    url: "https://nx.dev",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nx.svg",
+    color: "#143055"
+  },
+  {
+    id: "parcel",
+    title: "Parcel",
+    description: "零配置打包工具，开箱即用，小项目最快上手",
+    category: "构建工具",
+    tags: ["打包", "零配置", "简单"],
+    url: "https://parceljs.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#000000"
+  },
+  {
+    id: "tsup",
+    title: "tsup",
+    description: "基于 esbuild 的 TS 库打包器，配置极简，库作者最爱",
+    category: "构建工具",
+    tags: ["打包", "TS", "库"],
+    url: "https://tsup.egoist.dev",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#000000"
+  },
+  {
+    id: "bun",
+    title: "Bun",
+    description: "Zig 写的 JS 全能运行时，包管理+打包+运行，快得不讲道理",
+    category: "包管理器",
+    tags: ["运行时", "极速", "全能"],
+    url: "https://bun.sh",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/bun.svg",
+    color: "#000000"
+  },
+  {
+    id: "pip",
+    title: "pip",
+    description: "Python 官方包管理器，装库一行命令",
+    category: "包管理器",
+    tags: ["Python", "官方", "基础"],
+    url: "https://pip.pypa.io",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#000000"
+  },
+  {
+    id: "uv",
+    title: "uv",
+    description: "Rust 写的 Python 包管理器，比 pip 快 10-100 倍",
+    category: "包管理器",
+    tags: ["Python", "极速", "Rust"],
+    url: "https://github.com/astral-sh/uv",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#000000"
+  },
+  {
+    id: "cargo",
+    title: "Cargo",
+    description: "Rust 官方包管理+构建，一条命令管全套",
+    category: "包管理器",
+    tags: ["Rust", "官方", "构建"],
+    url: "https://doc.rust-lang.org/cargo",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#000000"
+  },
+  {
+    id: "maven",
+    title: "Maven",
+    description: "Java 老牌构建+依赖管理，Spring 项目的标配",
+    category: "包管理器",
+    tags: ["Java", "构建", "依赖"],
+    url: "https://maven.apache.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/apachemaven.svg",
+    color: "#C71A36"
+  },
+  {
+    id: "gradle",
+    title: "Gradle",
+    description: "JVM 新一代构建工具，Android 官方构建系统",
+    category: "包管理器",
+    tags: ["JVM", "Android", "构建"],
+    url: "https://gradle.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/gradle.svg",
+    color: "#02303A"
+  },
+  {
+    id: "composer",
+    title: "Composer",
+    description: "PHP 依赖管理器，Laravel 生态的基石",
+    category: "包管理器",
+    tags: ["PHP", "依赖", "生态"],
+    url: "https://getcomposer.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/composer.svg",
+    color: "#885630"
+  },
+  {
+    id: "playwright",
+    title: "Playwright",
+    description: "微软 E2E 测试框架，多浏览器并行，又快又稳",
+    category: "测试框架",
+    tags: ["E2E", "自动化", "多浏览器"],
+    url: "https://playwright.dev",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/playwright.svg",
+    color: "#2EAD33"
+  },
+  {
+    id: "cypress",
+    title: "Cypress",
+    description: "前端 E2E 测试标杆，实时重载看测试跑，DX 极佳",
+    category: "测试框架",
+    tags: ["E2E", "前端", "可视化"],
+    url: "https://www.cypress.io",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/cypress.svg",
+    color: "#17202C"
+  },
+  {
+    id: "testing-library",
+    title: "Testing Library",
+    description: "以用户视角写前端测试，React/Vue 通用",
+    category: "测试框架",
+    tags: ["单元测试", "前端", "用户视角"],
+    url: "https://testing-library.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/testinglibrary.svg",
+    color: "#E33332"
+  },
+  {
+    id: "mocha",
+    title: "Mocha",
+    description: "Node.js 老牌测试框架，灵活可配，生态丰富",
+    category: "测试框架",
+    tags: ["单元测试", "Node.js", "灵活"],
+    url: "https://mochajs.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/mocha.svg",
+    color: "#8D6748"
+  },
+  {
+    id: "k6",
+    title: "k6",
+    description: "开源负载测试，JS 写脚本，API 压测一把好手",
+    category: "测试框架",
+    tags: ["压测", "性能", "API"],
+    url: "https://k6.io",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/k6.svg",
+    color: "#7D64FF"
+  },
+  {
+    id: "junit",
+    title: "JUnit",
+    description: "Java 单元测试事实标准，TDD 的起点",
+    category: "测试框架",
+    tags: ["单元测试", "Java", "标准"],
+    url: "https://junit.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/junit5.svg",
+    color: "#25A162"
+  },
+  {
+    id: "gitea",
+    title: "Gitea",
+    description: "轻量自托管 Git 服务，一台小鸡就能跑的 GitHub 平替",
+    category: "版本控制",
+    tags: ["Git", "自托管", "轻量"],
+    url: "https://gitea.io",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/gitea.svg",
+    color: "#609926"
+  },
+  {
+    id: "bitbucket",
+    title: "Bitbucket",
+    description: "Atlassian 的 Git 仓库，与 Jira 联动丝滑",
+    category: "版本控制",
+    tags: ["Git", "Atlassian", "协作"],
+    url: "https://bitbucket.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/bitbucket.svg",
+    color: "#0052CC"
+  },
+  {
+    id: "railway",
+    title: "Railway",
+    description: "新一代 PaaS，git push 即部署，独立开发最爱",
+    category: "云平台",
+    tags: ["PaaS", "部署", "简单"],
+    url: "https://railway.app",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/railway.svg",
+    color: "#000000"
+  },
+  {
+    id: "render",
+    title: "Render",
+    description: "Heroku 精神续作，免费额度良心，全栈一键上线",
+    category: "云平台",
+    tags: ["PaaS", "免费", "部署"],
+    url: "https://render.com",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/render.svg",
+    color: "#000000"
+  },
+  {
+    id: "flyio",
+    title: "Fly.io",
+    description: "全球边缘部署，Docker 镜像秒变全球服务",
+    category: "云平台",
+    tags: ["边缘", "Docker", "全球"],
+    url: "https://fly.io",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#7C3AED"
+  },
+  {
+    id: "vitepress",
+    title: "VitePress",
+    description: "Vue 团队的静态文档站，写文档又快又好看",
+    category: "文档工具",
+    tags: ["文档", "静态站", "Vue"],
+    url: "https://vitepress.dev",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vitepress.svg",
+    color: "#5C73E7"
+  },
+  {
+    id: "storybook",
+    title: "Storybook",
+    description: "前端组件工作坊，独立开发调试 UI 组件",
+    category: "文档工具",
+    tags: ["组件", "UI", "调试"],
+    url: "https://storybook.js.org",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/storybook.svg",
+    color: "#FF4785"
+  }
 ];
 
 export const categories = [...new Set(toolsData.map((tool) => tool.category))].sort();
