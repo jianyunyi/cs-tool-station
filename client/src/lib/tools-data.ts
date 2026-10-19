@@ -694,7 +694,7 @@ export const toolsData: Tool[] = [
     url: "https://www.cloudflare.com",
     icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/cloudflare.svg",
     color: "#F38020",
-  }
+  },
 
   // --- 人工智能 ---
   {
