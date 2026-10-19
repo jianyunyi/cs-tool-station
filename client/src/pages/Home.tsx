@@ -12,6 +12,8 @@ const CATEGORIES = [
   { name: "后端框架", icon: Database },
   { name: "数据库", icon: Database },
   { name: "云平台", icon: Globe },
+  { name: "人工智能", icon: Sparkles },
+  { name: "开源精选", icon: Github },
 ];
 
 export default function Home() {
