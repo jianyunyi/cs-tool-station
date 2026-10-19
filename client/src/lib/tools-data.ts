@@ -862,6 +862,188 @@ export const toolsData: Tool[] = [
     icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
     color: "#000000"
   }
+,
+  // --- 开源精选 ---
+  {
+    id: "n8n",
+    title: "n8n",
+    description: "开源工作流自动化平台，可视化编排定时任务、API 调用和 AI Agent，Make/Zapier 的免费自托管替代",
+    category: "开源精选",
+    tags: ["自动化", "工作流", "自托管"],
+    url: "https://github.com/n8n-io/n8n",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#EA4B71"
+  },
+  {
+    id: "dify",
+    title: "Dify",
+    description: "开源 LLM 应用开发平台，可视化编排 Agent、工作流和知识库，开箱即用的 AI 应用工厂",
+    category: "开源精选",
+    tags: ["AI应用", "Agent", "低代码"],
+    url: "https://github.com/langgenius/dify",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#1C64F2"
+  },
+  {
+    id: "flowise",
+    title: "Flowise",
+    description: "拖拽式 LLM 应用构建器，用节点连出聊天机器人和 Agent，最快把大模型变成可用产品",
+    category: "开源精选",
+    tags: ["AI应用", "拖拽", "Agent"],
+    url: "https://github.com/FlowiseAI/Flowise",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#0EA5E9"
+  },
+  {
+    id: "langchain",
+    title: "LangChain",
+    description: "最主流的 LLM 应用开发框架，链式调用、RAG、Agent 的标准件，做 AI 应用绕不开它",
+    category: "开源精选",
+    tags: ["开发框架", "RAG", "Agent"],
+    url: "https://github.com/langchain-ai/langchain",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#1C3C3C"
+  },
+  {
+    id: "textgen-webui",
+    title: "text-generation-webui",
+    description: "oobabooga 的大模型本地运行界面，点几下就能在自己电脑上跑各种开源模型",
+    category: "开源精选",
+    tags: ["本地部署", "大模型", "对话"],
+    url: "https://github.com/oobabooga/text-generation-webui",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#000000"
+  },
+  {
+    id: "localai",
+    title: "LocalAI",
+    description: "本地 OpenAI 兼容 API，一套接口同时跑文本、语音、图像生成，旧电脑也能变 AI 服务器",
+    category: "开源精选",
+    tags: ["本地部署", "API兼容", "多模态"],
+    url: "https://github.com/mudler/LocalAI",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#000000"
+  },
+  {
+    id: "cherry-studio",
+    title: "Cherry Studio",
+    description: "颜值最高的 AI 对话客户端，支持 30+ 模型服务商，知识库、AI 绘画、翻译全都有",
+    category: "开源精选",
+    tags: ["客户端", "多模型", "知识库"],
+    url: "https://github.com/CherryHQ/cherry-studio",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#FF8C00"
+  },
+  {
+    id: "sd-webui",
+    title: "stable-diffusion-webui",
+    description: "AUTOMATIC1111 的 SD 出图界面，AI 绘画事实标准，插件生态最全，玩法最多",
+    category: "开源精选",
+    tags: ["AI绘画", "本地部署", "插件"],
+    url: "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#000000"
+  },
+  {
+    id: "invokeai",
+    title: "InvokeAI",
+    description: "更现代的 Stable Diffusion 创作套件，节点式工作流，出图、管理和模型训练一条龙",
+    category: "开源精选",
+    tags: ["AI绘画", "工作流", "创作"],
+    url: "https://github.com/invoke-ai/InvokeAI",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#7C3AED"
+  },
+  {
+    id: "uptime-kuma",
+    title: "Uptime Kuma",
+    description: "漂亮的开源站点监控，服务挂了第一时间推送告警，自托管 5 分钟搞定",
+    category: "开源精选",
+    tags: ["监控", "告警", "自托管"],
+    url: "https://github.com/louislam/uptime-kuma",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#5CDD8B"
+  },
+  {
+    id: "umami",
+    title: "Umami",
+    description: "轻量隐私友好的网站统计，Google Analytics 的平替，不用弹 Cookie 横幅",
+    category: "开源精选",
+    tags: ["统计分析", "隐私", "轻量"],
+    url: "https://github.com/umami-software/umami",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#000000"
+  },
+  {
+    id: "listmonk",
+    title: "listmonk",
+    description: "自托管邮件营销系统，Newsletter 和用户群发一站式，配合 SES 发信成本极低",
+    category: "开源精选",
+    tags: ["邮件营销", "群发", "自托管"],
+    url: "https://github.com/knadh/listmonk",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#0EA5E9"
+  },
+  {
+    id: "hoppscotch",
+    title: "Hoppscotch",
+    description: "开源 Postman 替代，浏览器里直接调试 API，轻快无登录墙",
+    category: "开源精选",
+    tags: ["API调试", "测试", "轻量"],
+    url: "https://github.com/hoppscotch/hoppscotch",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#09090B"
+  },
+  {
+    id: "appflowy",
+    title: "AppFlowy",
+    description: "开源 Notion 平替，笔记、看板、日历全有，数据存在自己手里不怕跑路",
+    category: "开源精选",
+    tags: ["笔记", "协作", "隐私"],
+    url: "https://github.com/AppFlowy-IO/AppFlowy",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#FF6B62"
+  },
+  {
+    id: "affine",
+    title: "AFFiNE",
+    description: "下一代知识库，白板+文档+数据库三合一，Notion 和 Miro 的开源结合体",
+    category: "开源精选",
+    tags: ["知识库", "白板", "文档"],
+    url: "https://github.com/toeverything/AFFiNE",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#1E96EB"
+  },
+  {
+    id: "logseq",
+    title: "Logseq",
+    description: "本地优先的双链笔记，隐私拉满，知识管理重度用户的选择",
+    category: "开源精选",
+    tags: ["笔记", "双链", "本地"],
+    url: "https://github.com/logseq/logseq",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#85C8C8"
+  },
+  {
+    id: "yt-dlp",
+    title: "yt-dlp",
+    description: "命令行视频下载神器，YouTube、B 站等上千站点通吃，清晰度任选",
+    category: "开源精选",
+    tags: ["下载", "视频", "命令行"],
+    url: "https://github.com/yt-dlp/yt-dlp",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#000000"
+  },
+  {
+    id: "medusa",
+    title: "Medusa",
+    description: "开源电商系统，Shopify 的自托管替代，API 优先方便二次开发",
+    category: "开源精选",
+    tags: ["电商", "建站", "API"],
+    url: "https://github.com/medusajs/medusa",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+    color: "#7C3AED"
+  }
 ];
 
 export const categories = [...new Set(toolsData.map((tool) => tool.category))].sort();
