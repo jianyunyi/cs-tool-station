@@ -1,5 +1,5 @@
 import { Tool } from "@/lib/tools-data";
-import { Download, ExternalLink } from "lucide-react";
+import { ArrowRight, Download, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
 
 interface ToolCardProps {
@@ -17,8 +17,12 @@ export default function ToolCard({ tool }: ToolCardProps) {
         }}
       />
 
-      {/* 内容区域 */}
-      <div className="relative z-10 flex flex-col gap-4 p-6 flex-grow">
+      {/* 内容区域 — 整块可点进详情页；底部官网/教程按钮是同级链接，不嵌套 */}
+      <Link
+        href={`/tool/${tool.id}`}
+        className="relative z-10 flex flex-col gap-4 p-6 flex-grow cursor-pointer"
+        aria-label={`查看 ${tool.title} 详情`}
+      >
         {/* 头部：Logo 和 标题 */}
         <div className="flex items-start gap-4">
           <div className="relative flex-shrink-0">
@@ -78,7 +82,12 @@ export default function ToolCard({ tool }: ToolCardProps) {
             </span>
           )}
         </div>
-      </div>
+
+        {/* 详情入口：让用户一眼知道卡片能点 */}
+        <span className="inline-flex items-center gap-1 text-xs font-bold text-primary/80">
+          查看详情 <ArrowRight className="h-3.5 w-3.5" />
+        </span>
+      </Link>
 
       {/* 底部操作按钮 */}
       <div className="relative z-20 grid grid-cols-2 border-t border-border/50 bg-muted/20 backdrop-blur-md">

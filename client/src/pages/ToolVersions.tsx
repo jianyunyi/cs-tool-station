@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toolsData } from "@/lib/tools-data";
-import { ChevronLeft, Download, ExternalLink, Globe } from "lucide-react";
+import { BookOpen, ChevronLeft, Download, ExternalLink, Globe } from "lucide-react";
 import { Link, useParams } from "wouter";
 
 export default function ToolVersions() {
@@ -85,12 +85,19 @@ export default function ToolVersions() {
             </div>
           </div>
           
-          <div className="relative z-10">
+          <div className="relative z-10 flex flex-wrap gap-3">
             <a href={tool.url} target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="rounded-full px-8 h-14 font-bold shadow-xl shadow-primary/20 gap-3">
                 <Globe className="h-5 w-5" /> 访问官网 <ExternalLink className="h-4 w-4 opacity-50" />
               </Button>
             </a>
+            {tool.tutorial && (
+              <a href={tool.tutorial} target="_blank" rel="noopener noreferrer">
+                <Button size="lg" variant="outline" className="rounded-full px-8 h-14 font-bold gap-3">
+                  <BookOpen className="h-5 w-5" /> 看 gv.uy 教程
+                </Button>
+              </a>
+            )}
           </div>
         </div>
         

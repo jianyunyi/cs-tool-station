@@ -13,6 +13,8 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/tool/:id/versions"} component={ToolVersions} />
+      {/* 详情页：复用同一组件（完整描述 + 全部标签 + 版本列表） */}
+      <Route path={"/tool/:id"} component={ToolVersions} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
