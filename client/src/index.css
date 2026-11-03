@@ -271,37 +271,3 @@
     animation: none;
   }
 }
-
-/* KittyPaw hero — native React port of the add-kittypaw-hero template CSS.
- * Poster is a dark cyan-tinted gradient (static variant, no video file);
- * brand is text (logo: null per the skill — never change only the brand
- * string while keeping another brand's logo). */
-.kp-hero{--kp-pad:clamp(24px,4.7vw,72px);position:relative;isolation:isolate;min-height:680px;height:100svh;box-sizing:border-box;overflow:hidden;color:#fff;background:radial-gradient(1200px 600px at 80% 10%,rgba(0,217,255,.18),transparent 60%),linear-gradient(180deg,#0f1419,#0a2a33 120%);font-family:Arial,sans-serif}
-.kp-hero *{box-sizing:border-box}.kp-hero a{color:inherit;text-decoration:none}.kp-hero button{font:inherit;color:inherit;cursor:pointer;background:none;border:none;text-align:left}.kp-hero a:focus-visible,.kp-hero button:focus-visible{outline:3px solid #fff;outline-offset:5px}
-.kp-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(0,0,0,.16),transparent 65%),linear-gradient(0deg,rgba(0,0,0,.22),transparent 50%)}
-.kp-header{display:flex;align-items:center;justify-content:space-between;padding:22px var(--kp-pad);position:relative;z-index:5}
-.kp-brand{font-size:clamp(20px,3vw,32px);font-weight:800;letter-spacing:-.02em;white-space:nowrap}
-.kp-menu-wrap{position:relative}
-.kp-toggle{border:1px solid #ffffff80;border-radius:40px;background:#ffffff1a;padding:8px 20px;backdrop-filter:blur(16px);font-size:22px!important}
-.kp-nav{position:absolute;top:calc(100% + 12px);right:0;width:260px;padding:14px;border:1px solid #ffffff40;border-radius:20px;background:#182a3780;backdrop-filter:blur(24px);box-shadow:0 16px 50px #0003;z-index:6}
-.kp-nav a,.kp-nav button{display:block;width:100%;padding:12px 16px;border-radius:10px;font-size:18px}
-.kp-nav a:hover,.kp-nav button:hover{background:#ffffff26}
-.kp-content{position:absolute;top:30.5%;left:var(--kp-pad);right:var(--kp-pad);max-width:570px}
-.kp-content h1{font-family:"Arial Black",Arial,sans-serif;font-size:clamp(60px,6.88vw,112px);line-height:1.09;letter-spacing:-.025em;font-weight:900;margin:0;text-shadow:0 5px 2px #0005}
-.kp-content h1 span{display:block}
-.kp-content p{font-size:22px;line-height:1.3;max-width:510px;margin:22px 0 0;text-shadow:0 1px 3px #0004}
-.kp-footer{position:absolute;bottom:48px;left:var(--kp-pad);right:var(--kp-pad);display:flex;align-items:center;justify-content:space-between;gap:24px}
-.kp-cta{display:flex;align-items:center;gap:18px;border-radius:50px;background:#fff;color:#080808!important;padding:16px 26px;font-size:22px;font-weight:800;white-space:nowrap;transition:transform .2s}
-.kp-cta:hover{transform:translateY(-3px)}
-.kp-arrow{transition:transform .2s}
-.kp-cta:hover .kp-arrow{transform:translateX(4px)}
-.kp-trust{display:flex;align-items:center;gap:16px}
-.kp-trust strong{font-size:26px;font-weight:900}
-.kp-trust p{font-size:20px;margin:6px 0 0}
-.kp-cursor{position:absolute;top:0;left:0;pointer-events:none;width:120px;height:120px;z-index:6;margin:-60px}
-.kp-cursor svg{width:100%;height:100%;fill:white;animation:kp-spin 12s linear infinite}
-.kp-cursor text{font-size:12px;letter-spacing:1.5px}
-@keyframes kp-spin{to{transform:rotate(360deg)}}
-@media(max-width:767px){.kp-hero{height:auto;min-height:100svh;display:flex;flex-direction:column}.kp-header{padding-top:20px}.kp-toggle{font-size:18px!important;padding:8px 14px}.kp-content{position:relative;top:auto;left:auto;right:auto;margin:120px var(--kp-pad) 64px;max-width:100%}.kp-content h1{font-size:clamp(44px,11.5vw,72px)}.kp-content p{font-size:18px;max-width:360px}.kp-footer{position:relative;inset:auto;margin:auto var(--kp-pad) 32px;align-items:flex-start;flex-direction:column;gap:28px}.kp-trust strong{font-size:22px}.kp-trust p{font-size:15px}.kp-cta{font-size:18px;padding:15px 22px}.kp-nav{width:min(270px,calc(100vw - 48px))}}
-@media(prefers-reduced-motion:reduce){.kp-cursor{display:none}.kp-hero *{animation:none!important;transition:none!important}}
-@media(hover:none),(pointer:coarse){.kp-cursor{display:none}}

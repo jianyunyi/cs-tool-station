@@ -1,6 +1,6 @@
 import { Input } from "@/components/ui/input";
 import ToolCard from "@/components/ToolCard";
-import KittyPawHero from "@/components/KittyPawHero";
+import KittyPawHeroMount from "@/components/KittyPawHeroMount";
 import { toolsData } from "@/lib/tools-data";
 import { Search, Sparkles, LayoutGrid, Terminal, Database, Code2, Layers, Server, Cloud, Github, Rocket, Wrench, BookOpen, Monitor, FileText, Hammer, FlaskConical, Lightbulb, Globe, Palette } from "lucide-react";
 import { useState, useMemo } from "react";
@@ -73,12 +73,11 @@ export default function Home() {
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-1/2 -left-24 w-72 h-72 bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
 
-      {/* KittyPaw full-viewport hero — replaces the bento header */}
-      <KittyPawHero
+      {/* KittyPaw hero — template mount, see KittyPawHeroMount.tsx */}
+      <KittyPawHeroMount
         total={toolsData.length}
         categoryCount={categories.length - 1}
         outboundCount={categoryCounts["出海工具"] ?? 0}
-        onSelectCategory={selectCategory}
       />
       <div className="container mx-auto py-16 px-4 relative z-10">
 
