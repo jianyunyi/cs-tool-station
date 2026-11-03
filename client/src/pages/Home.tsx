@@ -1,6 +1,6 @@
 import { Input } from "@/components/ui/input";
 import ToolCard from "@/components/ToolCard";
-import BentoDashboard from "@/components/BentoDashboard";
+import KittyPawHero from "@/components/KittyPawHero";
 import { toolsData } from "@/lib/tools-data";
 import { Search, Sparkles, LayoutGrid, Terminal, Database, Code2, Layers, Server, Cloud, Github, Rocket, Wrench, BookOpen, Monitor, FileText, Hammer, FlaskConical, Lightbulb, Globe, Palette } from "lucide-react";
 import { useState, useMemo } from "react";
@@ -67,19 +67,20 @@ export default function Home() {
   }, [search, activeCategory]);
 
   return (
-    <div className="min-h-screen bg-background relative overflow-x-clip">
+    <div id="top" className="min-h-screen bg-background relative overflow-x-clip">
       {/* 背景装饰渐变 */}
       <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-1/2 -left-24 w-72 h-72 bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
 
+      {/* KittyPaw full-viewport hero — replaces the bento header */}
+      <KittyPawHero
+        total={toolsData.length}
+        categoryCount={categories.length - 1}
+        outboundCount={categoryCounts["出海工具"] ?? 0}
+        onSelectCategory={selectCategory}
+      />
       <div className="container mx-auto py-16 px-4 relative z-10">
-        {/* Bento header — see BentoDashboard.tsx for the token mapping */}
-        <BentoDashboard
-          total={toolsData.length}
-          categoryCounts={categoryCounts}
-          onSelectCategory={selectCategory}
-        />
 
         {/* Search & Filter Section — sticky so the filter survives scrolling 170 cards */}
         <div className="sticky top-0 z-20 py-4 bg-background/85 backdrop-blur-xl max-w-4xl mx-auto mb-12 space-y-8">
@@ -133,7 +134,7 @@ export default function Home() {
         </div>
 
         {/* How to navigate: 官网 = direct jump, 教程 = back to gv.uy */}
-        <div className="mb-8 rounded-2xl border border-primary/30 bg-primary/5 px-5 py-4 text-sm leading-relaxed text-muted-foreground">
+        <div id="how" className="mb-8 rounded-2xl border border-primary/30 bg-primary/5 px-5 py-4 text-sm leading-relaxed text-muted-foreground">
           <span className="font-bold text-foreground">怎么用：</span>
           点卡片上的 <span className="font-bold text-primary">“官网”</span>，直接跳转到该工具自己的官网；
           点 <span className="font-bold text-primary">“教程”</span>，回到{" "}
