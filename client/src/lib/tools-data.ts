@@ -1767,7 +1767,7 @@ export const toolsData: Tool[] = [
     url: "https://storybook.js.org",
     icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/storybook.svg",
     color: "#FF4785"
-  }
+  },
   // 出海工具：gv.uy 教程配套工具（原创要点提炼自本站教程，非厂商文案）
   {
     id: "wise",
