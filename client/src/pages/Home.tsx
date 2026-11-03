@@ -14,6 +14,7 @@ const CATEGORIES = [
   { name: "云平台", icon: Globe },
   { name: "人工智能", icon: Sparkles },
   { name: "开源精选", icon: Github },
+  { name: "出海工具", icon: Globe },
 ];
 
 export default function Home() {

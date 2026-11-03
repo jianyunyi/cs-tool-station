@@ -91,13 +91,25 @@ export default function ToolCard({ tool }: ToolCardProps) {
           <ExternalLink className="h-4 w-4" />
           官网
         </a>
-        <Link
-          href={`/tool/${tool.id}/versions`}
-          className="flex items-center justify-center gap-2 py-3.5 text-xs font-bold text-muted-foreground hover:bg-background/50 hover:text-primary transition-all"
-        >
-          <Download className="h-4 w-4" />
-          版本
-        </Link>
+        {tool.tutorial ? (
+          <a
+            href={tool.tutorial}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 py-3.5 text-xs font-bold text-muted-foreground hover:bg-background/50 hover:text-primary transition-all"
+          >
+            <Download className="h-4 w-4" />
+            教程
+          </a>
+        ) : (
+          <Link
+            href={`/tool/${tool.id}/versions`}
+            className="flex items-center justify-center gap-2 py-3.5 text-xs font-bold text-muted-foreground hover:bg-background/50 hover:text-primary transition-all"
+          >
+            <Download className="h-4 w-4" />
+            版本
+          </Link>
+        )}
       </div>
     </div>
   );

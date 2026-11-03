@@ -13,6 +13,7 @@ export interface Tool {
   category: string;
   tags: string[];
   url: string;
+  tutorial?: string;
   icon?: string;
   color?: string;
   versions?: ToolVersion[];
@@ -1729,10 +1730,11 @@ export const toolsData: Tool[] = [
   {
     id: "render",
     title: "Render",
-    description: "Heroku 精神续作，免费额度良心，全栈一键上线",
-    category: "云平台",
-    tags: ["PaaS", "免费", "部署"],
+    description: "连 GitHub 仓库点几下就能上线，静态站一直免费、动态站也不收月费；注意免费档三条硬线：闲置 15 分钟休眠、免费数据库 30 天到期、每月只有 750 小时免费实例时间，跑正式生产会踩坑，做演示练手正合适。",
+    category: "出海工具",
+    tags: ["云托管", "免费", "部署"],
     url: "https://render.com",
+    tutorial: "https://jianyunyi.gv.uy/posts/2026-10-31-免费云托管-render免费档图文教程.html",
     icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/render.svg",
     color: "#000000"
   },
@@ -1766,6 +1768,118 @@ export const toolsData: Tool[] = [
     icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/storybook.svg",
     color: "#FF4785"
   }
+  // 出海工具：gv.uy 教程配套工具（原创要点提炼自本站教程，非厂商文案）
+  {
+    id: "wise",
+    title: "Wise",
+    description: "免费开个人多币种账户，一次拿到美元 ACH、欧元 IBAN 等本地收款信息；注意它不是传统银行、没有存款保险，大额别全放这里，第一次收款先小额测试再走大额。",
+    category: "出海工具",
+    tags: ["多币种", "收款", "跨境"],
+    url: "https://wise.com",
+    tutorial: "https://jianyunyi.gv.uy/posts/2026-10-20-境外银行-wise多币种账户图文教程.html",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/wise.svg",
+    color: "#163300"
+  },
+  {
+    id: "airwallex",
+    title: "Airwallex 空中云汇",
+    description: "只做企业客户的跨境收款账户，在线申请 1-3 个工作日可拿美、英、欧等地本地收款通道；注意它不是银行、无存款保险，合规审查可能冻结资金，别把全部营运资金押在一家。",
+    category: "出海工具",
+    tags: ["企业", "多币种", "收款"],
+    url: "https://www.airwallex.com",
+    tutorial: "https://jianyunyi.gv.uy/posts/2026-10-23-境外银行-airwallex多币种账户.html",
+    icon: "https://ui-avatars.com/api/?name=Airwallex&background=5B2CFF&color=fff",
+    color: "#5B2CFF"
+  },
+  {
+    id: "uptimerobot",
+    title: "UptimeRobot",
+    description: "免费版给 50 个监控点、每 5 分钟检查一次、邮件告警；注意 2024 年 12 月后免费版只许个人非商业用途，挂收款站要升级付费，别拿免费档跑正式生产。",
+    category: "出海工具",
+    tags: ["监控", "免费", "告警"],
+    url: "https://uptimerobot.com",
+    tutorial: "https://jianyunyi.gv.uy/posts/2026-10-23-免费出海策略-uptimerobot监控.html",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/uptimerobot.svg",
+    color: "#000000"
+  },
+  {
+    id: "planetexpress",
+    title: "Planet Express",
+    description: "免费美国地址带专属 suite 号，收信收包裹免费、寄出才按件加运费；注意免费存放只有 10 天、轻泡货按体积重计费会比预估贵，下单前先用官网运费计算器算一遍。",
+    category: "出海工具",
+    tags: ["转运", "美国地址", "免费"],
+    url: "https://planetexpress.com",
+    tutorial: "https://jianyunyi.gv.uy/posts/2026-10-24-免费转运地址-planetexpress美国地址图文教程.html",
+    icon: "https://ui-avatars.com/api/?name=Planet%20Express&background=0EA5E9&color=fff",
+    color: "#0EA5E9"
+  },
+  {
+    id: "revolut",
+    title: "Revolut",
+    description: "Standard 档 0 月费、手机上 10 分钟能走完开户，但要受支持国家居民身份加护照自拍；注意换汇额度用完、周末换汇、境外取现都会另收费，别以为 0 月费就等于全免费。",
+    category: "出海工具",
+    tags: ["多币种", "免费", "跨境"],
+    url: "https://www.revolut.com",
+    tutorial: "https://jianyunyi.gv.uy/posts/2026-10-26-境外银行-revolut免费账户图文教程.html",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/revolut.svg",
+    color: "#000000"
+  },
+  {
+    id: "duckdns",
+    title: "DuckDNS",
+    description: "靠捐赠维持的免费动态域名，家里宽带 IP 一变、跑个 5 分钟脚本域名就自动跟上；注意 token 就等于密码，截图求助前先检查有没有把 token 露出来，管理后台别裸露公网。",
+    category: "出海工具",
+    tags: ["域名", "动态DNS", "免费"],
+    url: "https://www.duckdns.org",
+    tutorial: "https://jianyunyi.gv.uy/posts/2026-10-28-免费域名-duckdns免费子域名图文教程.html",
+    icon: "https://ui-avatars.com/api/?name=DuckDNS&background=F59E0B&color=fff",
+    color: "#F59E0B"
+  },
+  {
+    id: "protonmail",
+    title: "Proton Mail",
+    description: "瑞士加密邮箱免费档 1GB，一个账号带日历、网盘、密码管理器基础版；注意免费档没有自定义域名、不能用 Bridge 接第三方客户端，每天发信 150 封封顶，忘密码就永久丢信。",
+    category: "出海工具",
+    tags: ["邮箱", "加密", "免费"],
+    url: "https://proton.me",
+    tutorial: "https://jianyunyi.gv.uy/posts/2026-10-29-免费邮箱-protonmail免费加密邮箱图文教程.html",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/protonmail.svg",
+    color: "#6D4AFF"
+  },
+  {
+    id: "firsty",
+    title: "Firsty",
+    description: "下飞机没网时的救命 eSIM，看一条广告换 20MB、1Mbps、每天最多攒 360MB，不绑卡不签合同；注意它只有数据没有电话号码、不能接验证码，国行双实体卡手机装不了，落地前要在 Wi-Fi 下先装好。",
+    category: "出海工具",
+    tags: ["eSIM", "免费", "出境"],
+    url: "https://www.firsty.app",
+    tutorial: "https://jianyunyi.gv.uy/posts/2026-10-30-免费esim-firsty看广告换流量图文教程.html",
+    icon: "https://ui-avatars.com/api/?name=Firsty&background=10B981&color=fff",
+    color: "#10B981"
+  },
+  {
+    id: "protonvpn",
+    title: "Proton VPN",
+    description: "免费档不限流量、不绑卡，靠付费订阅养不是靠广告；注意免费服务器不能自选国家、只有 1 台设备、流媒体不保证，拿它保咖啡馆 Wi-Fi 够用，追地区限定剧集不够用。",
+    category: "出海工具",
+    tags: ["VPN", "免费", "安全"],
+    url: "https://protonvpn.com",
+    tutorial: "https://jianyunyi.gv.uy/posts/2026-10-30-免费vpn-proton-vpn免费档图文教程.html",
+    icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/protonvpn.svg",
+    color: "#6D4AFF"
+  },
+  {
+    id: "pollinations",
+    title: "Pollinations",
+    description: "2026 年 11 月 2 日当天不带 Key 连测 6 次，图片和文案接口都通了；注意规则在变，旧教程的语音 GET 写法已返回 404，匿名限速约 1 次/15 秒，写脚本要加等待，免费档不保证可用性，别在重要节点临时指望它。",
+    category: "出海工具",
+    tags: ["AI接口", "免费", "出图"],
+    url: "https://pollinations.ai",
+    tutorial: "https://jianyunyi.gv.uy/posts/2026-11-02-免费ai接口-pollinations免注册实测图文教程.html",
+    icon: "https://ui-avatars.com/api/?name=Pollinations&background=EC4899&color=fff",
+    color: "#EC4899"
+  },
+
 ];
 
 export const categories = [...new Set(toolsData.map((tool) => tool.category))].sort();
