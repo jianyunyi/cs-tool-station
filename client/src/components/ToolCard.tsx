@@ -8,7 +8,7 @@ interface ToolCardProps {
 
 export default function ToolCard({ tool }: ToolCardProps) {
   return (
-    <div className="tool-card group relative flex flex-col h-full overflow-hidden rounded-2xl border bg-card/50 backdrop-blur-sm transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 border-border/50 hover:border-primary/50">
+    <div className="tool-card group relative flex flex-col h-full overflow-hidden rounded-[30px] border bg-card/50 backdrop-blur-sm transition-all duration-500 hover:shadow-[0_22px_44px_-22px_rgba(0,217,255,0.35)] hover:-translate-y-2 border-border/50 hover:border-primary/50">
       {/* 背景光晕效果 */}
       <div
         className="absolute -right-10 -top-10 w-32 h-32 rounded-full blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-20"

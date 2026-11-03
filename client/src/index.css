@@ -231,3 +231,43 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #00d9ff;
 }
+
+/* Bento tokens — adapted from bento-roadmap-dashboard skill, mapped to this
+ * project's own variables (adaptation guide §2). Accent is the project's
+ * cyan primary, not the skill's lime. Dark theme: the contrast tile is the
+ * accent hero card; shadows are cyan-tinted, borders stay subtle. */
+:root {
+  --bento-canvas: var(--background);
+  --bento-accent: var(--primary);
+  --bento-accent-soft: color-mix(in oklab, var(--primary) 70%, white);
+  --bento-accent-deep: color-mix(in oklab, var(--primary) 85%, black);
+  --bento-accent-tint: color-mix(in oklab, var(--primary) 18%, white);
+  --bento-ink: var(--foreground);
+  --bento-ink-muted: var(--muted-foreground);
+  --bento-on-accent: var(--primary-foreground);
+  --bento-surface: var(--card);
+  --bento-surface-alt: var(--secondary);
+  --bento-radius-card: 30px;
+  --bento-shadow: 0 22px 44px -22px color-mix(in oklab, var(--primary) 38%, transparent);
+}
+
+@keyframes bento-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+.bento-float {
+  animation: bento-float 4s ease-in-out infinite;
+}
+
+.bento-float-alt {
+  animation: bento-float 4s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bento-float,
+  .bento-float-alt {
+    animation: none;
+  }
+}

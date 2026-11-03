@@ -1,21 +1,34 @@
 import { Input } from "@/components/ui/input";
 import ToolCard from "@/components/ToolCard";
+import BentoDashboard from "@/components/BentoDashboard";
 import { toolsData } from "@/lib/tools-data";
-import { Search, Sparkles, LayoutGrid, Terminal, Database, Code2, Layers, Server, Cloud, Github, Rocket } from "lucide-react";
+import { Search, Sparkles, LayoutGrid, Terminal, Database, Code2, Layers, Server, Cloud, Github, Rocket, Wrench, BookOpen, Monitor, FileText, Hammer, FlaskConical, Lightbulb, Globe, Palette } from "lucide-react";
 import { useState, useMemo } from "react";
 
-const CATEGORIES = [
-  { name: "全部", icon: LayoutGrid },
-  { name: "编码编辑器", icon: Code2 },
-  { name: "版本控制", icon: Terminal },
-  { name: "前端框架", icon: Layers },
-  { name: "后端框架", icon: Server },
-  { name: "数据库", icon: Database },
-  { name: "云平台", icon: Cloud },
-  { name: "人工智能", icon: Sparkles },
-  { name: "开源精选", icon: Github },
-  { name: "出海工具", icon: Rocket },
-];
+/* Category icons. The list itself is derived from toolsData below — the old
+ * hardcoded 10-button list hid 68 tools whose categories had no button
+ * (开发工具、包管理器、构建工具等), so those tools could never be filtered to. */
+const CATEGORY_ICONS: Record<string, typeof LayoutGrid> = {
+  "编码编辑器": Code2,
+  "版本控制": Terminal,
+  "前端框架": Layers,
+  "后端框架": Server,
+  "数据库": Database,
+  "云平台": Cloud,
+  "人工智能": Sparkles,
+  "开源精选": Github,
+  "出海工具": Rocket,
+  "开发工具": Wrench,
+  "包管理器": Wrench,
+  "构建工具": Hammer,
+  "测试框架": FlaskConical,
+  "学习平台": BookOpen,
+  "在线工具": Globe,
+  "文档工具": FileText,
+  "生产力工具": Lightbulb,
+  "练手网站": Monitor,
+  "设计工具": Palette,
+};
 
 export default function Home() {
   const [search, setSearch] = useState("");
@@ -28,6 +41,17 @@ export default function Home() {
     }
     return counts;
   }, []);
+
+  const categories = useMemo(() => {
+    const names = Object.keys(categoryCounts).filter((n) => n !== "全部");
+    names.sort((a, b) => categoryCounts[b] - categoryCounts[a]);
+    return ["全部", ...names];
+  }, [categoryCounts]);
+
+  const selectCategory = (name: string) => {
+    setActiveCategory(name);
+    document.getElementById("tools-grid")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   const filteredTools = useMemo(() => {
     return toolsData.filter((tool) => {
@@ -50,30 +74,12 @@ export default function Home() {
       <div className="absolute top-1/2 -left-24 w-72 h-72 bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="container mx-auto py-16 px-4 relative z-10">
-        {/* Header Section */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-black uppercase tracking-widest animate-fade-in">
-            <Sparkles className="h-3.5 w-3.5" />
-            极致开发者工具导航
-          </div>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-foreground leading-[1.1]">
-            CS TOOL <span className="text-primary italic">STATION</span>
-          </h1>
-          <p className="text-xl text-muted-foreground font-medium leading-relaxed">
-            为您精选全球顶尖开发工具、框架与数据库，提供一站式官方下载与版本管理。
-          </p>
-          <div className="pt-4">
-            <a
-              href="https://github.com/jianyunyi/cs-tool-station"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-border bg-card/50 backdrop-blur-sm text-sm font-bold text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all duration-300"
-            >
-              <Github className="h-4 w-4" />
-              Star on GitHub
-            </a>
-          </div>
-        </div>
+        {/* Bento header — see BentoDashboard.tsx for the token mapping */}
+        <BentoDashboard
+          total={toolsData.length}
+          categoryCounts={categoryCounts}
+          onSelectCategory={selectCategory}
+        />
 
         {/* Search & Filter Section — sticky so the filter survives scrolling 170 cards */}
         <div className="sticky top-0 z-20 py-4 bg-background/85 backdrop-blur-xl max-w-4xl mx-auto mb-12 space-y-8">
@@ -91,30 +97,31 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Category Tabs */}
-          <div className="flex flex-wrap justify-center gap-3">
-            {CATEGORIES.map((cat) => {
-              const Icon = cat.icon;
-              const isActive = activeCategory === cat.name;
+          {/* Category Tabs — 20 categories now, so scroll horizontally
+              instead of wrapping into a tall sticky block */}
+          <div className="flex gap-3 overflow-x-auto pb-1">
+            {categories.map((name) => {
+              const Icon = CATEGORY_ICONS[name] ?? LayoutGrid;
+              const isActive = activeCategory === name;
               return (
                 <button
-                  key={cat.name}
+                  key={name}
                   aria-pressed={isActive}
-                  onClick={() => setActiveCategory(cat.name)}
+                  onClick={() => setActiveCategory(name)}
                   className={`
-                    flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 border
-                    ${isActive 
-                      ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/25 scale-105" 
+                    shrink-0 flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 border
+                    ${isActive
+                      ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/25 scale-105"
                       : "bg-card/40 backdrop-blur-md text-muted-foreground border-border/50 hover:border-primary/30 hover:bg-card/60"
                     }
                   `}
                 >
                   <Icon className={`h-4 w-4 ${isActive ? "animate-pulse" : "opacity-70"}`} />
-                  {cat.name}
+                  {name}
                   <span className="text-[11px] font-bold opacity-70">
-                    {categoryCounts[cat.name] ?? 0}
+                    {categoryCounts[name] ?? 0}
                   </span>
-                  {cat.name === "出海工具" && (
+                  {name === "出海工具" && (
                     <span className="text-[10px] font-black px-1.5 py-0.5 rounded-full bg-amber-400 text-black">
                       新
                     </span>
@@ -146,7 +153,7 @@ export default function Home() {
 
         {/* Tools Grid */}
         {filteredTools.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <div id="tools-grid" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
             {filteredTools.map((tool) => (
               <ToolCard key={tool.id} tool={tool} />
             ))}
