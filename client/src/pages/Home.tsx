@@ -1,25 +1,33 @@
 import { Input } from "@/components/ui/input";
 import ToolCard from "@/components/ToolCard";
 import { toolsData } from "@/lib/tools-data";
-import { Search, Sparkles, LayoutGrid, Terminal, Database, Code2, Globe, Github } from "lucide-react";
+import { Search, Sparkles, LayoutGrid, Terminal, Database, Code2, Layers, Server, Cloud, Github, Rocket } from "lucide-react";
 import { useState, useMemo } from "react";
 
 const CATEGORIES = [
   { name: "全部", icon: LayoutGrid },
   { name: "编码编辑器", icon: Code2 },
   { name: "版本控制", icon: Terminal },
-  { name: "前端框架", icon: Globe },
-  { name: "后端框架", icon: Database },
+  { name: "前端框架", icon: Layers },
+  { name: "后端框架", icon: Server },
   { name: "数据库", icon: Database },
-  { name: "云平台", icon: Globe },
+  { name: "云平台", icon: Cloud },
   { name: "人工智能", icon: Sparkles },
   { name: "开源精选", icon: Github },
-  { name: "出海工具", icon: Globe },
+  { name: "出海工具", icon: Rocket },
 ];
 
 export default function Home() {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("全部");
+
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = { "全部": toolsData.length };
+    for (const tool of toolsData) {
+      counts[tool.category] = (counts[tool.category] || 0) + 1;
+    }
+    return counts;
+  }, []);
 
   const filteredTools = useMemo(() => {
     return toolsData.filter((tool) => {
@@ -56,7 +64,7 @@ export default function Home() {
           </p>
           <div className="pt-4">
             <a
-              href="https://github.com"
+              href="https://github.com/jianyunyi/cs-tool-station"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-border bg-card/50 backdrop-blur-sm text-sm font-bold text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all duration-300"
@@ -67,13 +75,14 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Search & Filter Section */}
-        <div className="max-w-4xl mx-auto mb-12 space-y-8">
+        {/* Search & Filter Section — sticky so the filter survives scrolling 170 cards */}
+        <div className="sticky top-0 z-20 py-4 bg-background/85 backdrop-blur-xl max-w-4xl mx-auto mb-12 space-y-8">
           <div className="relative group">
             <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative flex items-center bg-card/50 backdrop-blur-xl border border-border/50 rounded-2xl p-2 shadow-2xl">
               <Search className="absolute left-6 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
               <Input
+                aria-label="搜索工具"
                 placeholder="搜索工具名称、描述或标签..."
                 className="h-14 pl-14 pr-6 bg-transparent border-none text-lg font-medium focus-visible:ring-0 placeholder:text-muted-foreground/50"
                 value={search}
@@ -90,6 +99,7 @@ export default function Home() {
               return (
                 <button
                   key={cat.name}
+                  aria-pressed={isActive}
                   onClick={() => setActiveCategory(cat.name)}
                   className={`
                     flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 border
@@ -101,10 +111,29 @@ export default function Home() {
                 >
                   <Icon className={`h-4 w-4 ${isActive ? "animate-pulse" : "opacity-70"}`} />
                   {cat.name}
+                  <span className="text-[11px] font-bold opacity-70">
+                    {categoryCounts[cat.name] ?? 0}
+                  </span>
+                  {cat.name === "出海工具" && (
+                    <span className="text-[10px] font-black px-1.5 py-0.5 rounded-full bg-amber-400 text-black">
+                      新
+                    </span>
+                  )}
                 </button>
               );
             })}
           </div>
+        </div>
+
+        {/* How to navigate: 官网 = direct jump, 教程 = back to gv.uy */}
+        <div className="mb-8 rounded-2xl border border-primary/30 bg-primary/5 px-5 py-4 text-sm leading-relaxed text-muted-foreground">
+          <span className="font-bold text-foreground">怎么用：</span>
+          点卡片上的 <span className="font-bold text-primary">“官网”</span>，直接跳转到该工具自己的官网；
+          点 <span className="font-bold text-primary">“教程”</span>，回到{" "}
+          <a href="https://jianyunyi.gv.uy/" target="_blank" rel="noopener noreferrer" className="font-bold text-primary underline underline-offset-2">
+            出海实操教程（gv.uy）
+          </a>{" "}
+          看对应的实测步骤。没有“教程”按钮的卡片，点“版本”看历史版本。
         </div>
 
         {/* Results Count */}
@@ -146,9 +175,8 @@ export default function Home() {
             Build for developers by developers
           </p>
           <div className="flex justify-center gap-8">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-bold text-xs uppercase tracking-widest">关于我们</a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-bold text-xs uppercase tracking-widest">提交工具</a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-bold text-xs uppercase tracking-widest">开源协议</a>
+            <a href="https://jianyunyi.gv.uy/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors font-bold text-xs uppercase tracking-widest">教程站 gv.uy</a>
+            <a href="https://github.com/jianyunyi/cs-tool-station" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors font-bold text-xs uppercase tracking-widest">开源仓库</a>
           </div>
         </div>
       </footer>

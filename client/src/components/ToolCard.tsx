@@ -57,8 +57,8 @@ export default function ToolCard({ tool }: ToolCardProps) {
           </div>
         </div>
 
-        {/* 描述文本 */}
-        <p className="text-sm text-muted-foreground line-clamp-2 leading-relaxed h-10 group-hover:text-foreground/80 transition-colors">
+        {/* 描述文本：放宽到 3 行，免费档边界不再被截掉一半 */}
+        <p className="text-sm text-muted-foreground line-clamp-3 leading-relaxed group-hover:text-foreground/80 transition-colors">
           {tool.description}
         </p>
 
@@ -86,6 +86,7 @@ export default function ToolCard({ tool }: ToolCardProps) {
           href={tool.url}
           target="_blank"
           rel="noopener noreferrer"
+          title="直接跳转到该工具官网"
           className="flex items-center justify-center gap-2 py-3.5 text-xs font-bold text-muted-foreground hover:bg-background/50 hover:text-primary transition-all border-r border-border/50"
         >
           <ExternalLink className="h-4 w-4" />
@@ -96,6 +97,7 @@ export default function ToolCard({ tool }: ToolCardProps) {
             href={tool.tutorial}
             target="_blank"
             rel="noopener noreferrer"
+            title="回到 gv.uy 看对应教程"
             className="flex items-center justify-center gap-2 py-3.5 text-xs font-bold text-muted-foreground hover:bg-background/50 hover:text-primary transition-all"
           >
             <Download className="h-4 w-4" />
